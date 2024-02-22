@@ -16,10 +16,7 @@
 
 4. From your account, go to the navigation bar at left and select 'Workshops'
 
-   <img width="881" alt="image" src="https://github.com/CU-ESIIL/forest-carbon-codefest/assets/cyverse-user-portal.png">
-
-
-![user portal](./assets/cyverse-user-portal.png)
+![user portal](../assets/cyverse-user-portal.png)
 
 5. From the workshop page, find the workshop titled "Forest Carbon Codefest". It should look like this:
 
@@ -47,7 +44,7 @@
 
    <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/4bb45960-0a9b-4e3d-af83-fd424dae9bf4">
 
-2. Select `JupyterLab Earthlab`
+2. Select `JupyterLab ESIIL`
 
    <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/31bdaedf-efa7-4778-bd3b-b790efa128b9">
 

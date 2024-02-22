@@ -15,6 +15,7 @@ nav:
   - Home: index.md
   - Collaboration in the Cloud:
     - Using CyVerse: collaborating-on-the-cloud/cyverse-instructions.md
+    - GitHub Basics: collaborating-on-the-cloud/github-basics.md
 
 # Configuration
 theme:
