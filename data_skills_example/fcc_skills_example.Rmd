@@ -1,0 +1,125 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Forest Carbon Codefest data skills example
+## Create a graphic with statistics from Monitoring Trends in Burn Severity (MTBS) perimeters
+
+CU Boulder CIRES Earth Lab
+
+A basic level of coding ability will be required to attend the Forest Carbon Codefest, such that any given participant can (in the coding language of their choosing): i) open and plot tabular and geospatial data, ii) compute summary statistics or create basic statistical models, and iii) create simple data visualizations.
+
+Not sure what that means? This markdown contains a few example graphics; you should be able to create something similar, if given the appropriate data. Note that while this example is in R, similar ability in any coding language is sufficient!
+
+## SETUP
+
+```{r, warning = FALSE, results = 'hide', message = FALSE}
+
+#Check the required libraries and download if needed
+list.of.packages <- c("tidyverse", 
+                      "terra",
+                      "sf",
+                      "tmap",
+                      "here",
+                      "mblm", #Median-based linear models (i.e. thiel-sen)
+                      "tigris", #US data
+                      "scales", #add commas to ggplot axis
+                      "tinytex") 
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
+invisible(lapply(list.of.packages, library, character.only = TRUE)) #apply library function to all packages without producing any output
+
+```
+
+## Read in MTBS & manipulate
+
+```{r, message=FALSE, warning = FALSE, results = 'hide'}
+
+#Read in MTBS data, ensure valid, add burn year
+mtbsPerims <- sf::st_read("C:/Users/tyler/OneDrive - UCB-O365/dev/fast-fires/data/mtbs_perimeter_data_1984_2021/mtbs_perims_DD.shp") %>% 
+  st_transform(st_crs(4269)) #Data from https://www.mtbs.gov/
+
+
+head(mtbsPerims)
+
+#Get burn year for each polygon and the burn area in hectares instead of acres
+mtbsPerims <- mtbsPerims %>%
+  dplyr::mutate(Burn_Yr = year(as.Date(Ig_Date))) %>%
+  dplyr::mutate(BurnHa = BurnBndAc * 0.404686) %>%
+  sf::st_make_valid()
+
+#Ensure polygon validity
+sf::st_is_valid(mtbsPerims) %>% unique()
+
+
+#Get shapefiles for the US
+# Fetch all US states
+usa <- tigris::states() %>% 
+  st_transform(st_crs(4269))
+
+# Filter for contiguous states (excluding Alaska and Hawaii)
+conus <- usa[usa$STUSPS %in% c("WA", "ID", "MT", "ND", "MN", "MI", "ME", "WI", "VT", "NH", "NY", "SD", "WY", "OR", "IA", "NE", "IL", "NV", "UT", "CO", "KS", "OK", "NM", "AZ", "AR", "MO", "MS", "AL", "GA", "SC", "NC", "TN", "KY", "IN", "OH", "WV", "VA", "PA", "MD", "DE", "NJ", "CT", "RI", "MA", "CT", "CA", "TX", "FL", "LA"),]
+
+west <- usa[usa$STUSPS %in% c("WA", "OR", "CA", "ID", "MT", "WY", "NV", "AZ", "CO", "NM", "UT"),]
+
+
+#Filter perimeters to just include the area we want
+mtbsPerimsWest <- sf::st_filter(mtbsPerims, west)
+
+#Plot the perimeters (could use mapview library here if wanted an interactive visual)
+tmap::tm_shape(mtbsPerimsWest) +
+  tmap::tm_fill(col = "Burn_Yr") +
+  tmap::tm_layout(main.title = "MTBS Perimeters in the \nWestern U.S. by Burn Year")
+
+```
+
+\newpage
+
+## Create summaries of MTBS data and plot
+
+```{r}
+
+#summarize burned area by hectares
+get.wildfire.burn.ha.summary <- function(perims) {
+  burnedAc <- perims %>%
+    filter(Incid_Type == "Wildfire") %>%
+    select(Burn_Yr, BurnHa) %>%
+    as.data.frame() %>%
+    group_by(Burn_Yr) %>%
+    summarise(totBurnHa = sum(BurnHa))
+  return(burnedAc)
+}
+
+#Get summary stats
+westBurned <- get.wildfire.burn.ha.summary(mtbsPerimsWest)
+
+#Get theil-sen fits and graph
+theilSenFitWest <- mblm::mblm(totBurnHa ~ Burn_Yr, westBurned, repeated = FALSE)
+
+#Plot and add Theil-Sen fit line to graph
+ggplot(westBurned, aes(x = Burn_Yr, y = totBurnHa)) +
+  geom_col(fill = "maroon") +
+  labs(title = "Western U.S. Burned Area 1984-2021") +
+  xlab("Year") +
+  ylab("Total area burned by wildfire (ha)") +
+  scale_y_continuous(labels=comma) +
+  geom_abline(intercept = theilSenFitWest$coefficients["(Intercept)"],
+              slope = theilSenFitWest$coefficients["Burn_Yr"],
+              linetype = "dashed",
+              linewidth = 0.8) +
+  theme_light()
+
+
+```
+
+## Estimator coefficients and significance
+
+
+```{r, warning=FALSE}
+#Get estimator significance
+summary.mblm(theilSenFitWest)
+```
+
+

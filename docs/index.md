@@ -1,70 +1,41 @@
-# [Your Working Group Name]
+![Forest pixel banner](./assets/ForestBanner_NASA_Imagery.png)
 
-Welcome to the [Your Working Group Name] repository, part of the Environmental Data Science Innovation and Inclusion Lab (ESIIL). This repository serves as the central hub for our working group, hosting our project description, proposals, member bios, codebase, and more.
+# Forest Carbon CodeFest
 
-## Our Project
+March 12-14, 2024
 
-[Provide a brief overview of your project here. Explain what you aim to achieve, the importance of your project, and its expected impact.]
+Forests have the potential to regulate a changing climate through uptake of carbon dioxide. However, this function is being compromised by increasing wildfires and other disturbances, particularly in the western U.S. The goal of the Forest Carbon Codefest is for teams to use cyberinfrastructure and a curated set of data to define their own scientific questions that advance our understanding of aboveground forest carbon dynamics as they relate to forest disturbance. Teams will then collaboratively answer that question in the form of a fully open, reproducible, and complete code script.
 
-## Project Proposal
+At the end of the event, projects will be judged by the participant community and facilitation team, with a prize awarded to each member of the winning team.
 
-[Link to the detailed project proposal document or include the proposal directly in the repository. This should outline the goals, methodologies, anticipated challenges, and projected timelines.]
+Our passionate cohort of participants for the event includes individuals from academia, land management, and industry, across a range of career stages.
 
-## Group Members
+Code generated from the event can be found on [our GitHub repo](https://github.com/earthlab/forest-carbon-codefest-2024), and is available for use under an MIT license.
 
-[List the names and a brief description of each group member, possibly linking to their personal or professional web pages.]
+# Details
 
-- **Member 1**: Brief description or role within the group.
-- **Member 2**: Brief description or role within the group.
-- ...
+## Where  
+In-person at the University of Colorado, Boulder  
 
-## Code Repository
+## When  
+March 12-14, 2024  
+Detailed agenda to come.  
+3-4 virtual 1-2 hour pre-training and team formation sessions will span  
+the 4 weeks before the event. Exact dates and times for these sessions are TBD.
 
-This section of the repository will include all the code developed for the project. You can structure it as follows:
+- Day 1: March 12, 2024, 9am - 4pm MST
+- Day 2: March 13, 2024, 9am - 4pm MST 
+- Day 3: March 14, 2024, 9am - 1pm MST
 
-- **Analysis Code**: Scripts for data analysis, statistical modeling, etc.
-- **Data Processing**: Scripts for cleaning, merging, and managing datasets.
-- **Visualization**: Code for creating figures, charts, and interactive visualizations.
 
-## Meeting Notes and Agendas
+# Event Documents
 
-Meeting notes and agendas will be regularly updated here to keep all group members informed and engaged with the progress and direction of the project.
+- [Event overview & official rules](https://docs.google.com/document/d/1el21bK1y2s7QlPMZGwckOaqwhWzW6Tt6CILTUBfjlCc/edit?usp=drive_link)
+- [Project evaluation criteria](https://docs.google.com/document/d/1nMNbWuwLj-zqCxvk9fpxxHOeb1OQ48ah8thdLAHxakU/edit)
+- [Code of conduct](https://docs.google.com/document/d/1BpqHKCaa_NZYQXPk2BHyPG3p9tjvWMJNsixn93mtAMU/edit?usp=drive_link)
+- [Intellectual property participant agreement](https://docs.google.com/document/d/1jKXWrVzuhKWbRPtcRelxcSD9svh9rvTQUmadDV1Dy1I/edit?usp=drive_link)
+- [Guidelines for intellectual contributions and credit](https://drive.google.com/file/d/1WcjV412EzCxohNtjFtca-o2Gpf36ISAX/view?usp=sharing)
 
-## Contributing to This Repository
 
-We welcome contributions from all group members. To maintain the quality and integrity of the repository, please adhere to the following guidelines:
-
-- Make sure all commits have a clear and concise message.
-- Document any major changes or decisions in the meeting notes.
-- Review and merge changes through pull requests to ensure oversight.
-
-## Getting Help
-
-If you encounter any issues or have questions about how to contribute, please refer to the [ESIIL Support Page](https://esiil.org/support) or contact the repository maintainers directly.
-
-## Customize Your Repository
-
-As a new working group, you'll want to make this repository your own. Here's how to get started:
-
-1. **Edit This Readme**: Replace the placeholder content with information about your specific project. Ensure that the introduction, project overview, and objectives clearly reflect your group's research focus.
-
-2. **Update Group Member Bios**: Add details about each group member's expertise, role in the project, and professional background. Include links to personal or professional web pages to foster community engagement and collaboration.
-
-3. **Organize Your Code**: Structure your codebase in a way that is logical and accessible. Use directories and clear naming conventions to make it easy for all members to find and contribute to different parts of the project.
-
-4. **Document Your Data**: Include a data directory with README files explaining the datasets, sources, and any preprocessing steps. This will help new members understand and work with the project's data effectively.
-
-5. **Outline Your Methods**: Create a detailed METHODS.md file where you describe the methodologies, software, and tools you will be using in your research. This transparency will support reproducibility and collaborative development.
-
-6. **Set Up Project Management**: Utilize the 'Issues' and 'Projects' features on GitHub to track tasks, discuss ideas, and manage your workflow. This can help in maintaining a clear view of progress and priorities.
-
-7. **Add a License**: Choose and include an appropriate open-source license for your project, ensuring that the broader community understands how they can use and contribute to your work.
-
-8. **Create Contribution Guidelines**: Establish a CONTRIBUTING.md file with instructions for members on how to propose changes, submit issues, and contribute code.
-
-9. **Review and Merge Workflow**: Decide on a workflow for reviewing and merging changes. Will you use branch protection? Who will have merge privileges? Document this process to avoid confusion.
-
-10. **Establish Communication Channels**: Beyond GitHub, set up additional communication channels like Slack, Discord, or email lists for quick and informal discussions.
-
-Remember, the goal is to make your repository clear, accessible, and useful for all current and future members of your working group. Happy researching!
+*This event is hosted by ESIIL and the CU Boulder CIRES Earth Lab. It is funded by the National Science Foundation (via awards numbers DBI-2153040, DEB-1846384, and DEB-2017889), and subject to the NSF’s terms and conditions*
 

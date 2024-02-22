@@ -1,0 +1,91 @@
+```{r}
+
+
+
+#Check the required libraries and download if needed
+packageList <- c(
+  "hunter-stanke/rFIA" #Relative path best practices
+)
+
+
+# Function to check and install packages
+install.and.load.packages <- function(packageList) {
+  missingCranPackages <- c()
+  missingGithubPackages <- c()
+
+  for (package in packageList) {
+    packageLoaded <- FALSE
+
+    # Check if the package is from GitHub
+    if (grepl("/", package)) {
+      packageName <- unlist(strsplit(package, "/"))[2]
+      packageLoaded <- require(packageName, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)
+    } else {
+      packageLoaded <- require(package, character.only = TRUE, quietly = TRUE, warn.conflicts = FALSE)
+    }
+
+    # Mark as missing if not loaded
+    if (!packageLoaded) {
+      if (grepl("/", package)) {
+        missingGithubPackages <- c(missingGithubPackages, package)
+      } else {
+        missingCranPackages <- c(missingCranPackages, package)
+      }
+    }
+  }
+
+  # Install missing CRAN packages
+  if (length(missingCranPackages) > 0) {
+    cat("The following CRAN packages are missing: ", paste(missingCranPackages, collapse = ", "))
+    response <- readline(prompt = "\nDo you want to install the missing CRAN packages? (y/n): ")
+    if (tolower(response) == "y") {
+      install.packages(missingCranPackages)
+      for (package in missingCranPackages) {
+        require(package, character.only = TRUE)
+      }
+    } else {
+      cat("Skipping installation of missing CRAN packages.\n")
+    }
+  }
+
+  # Ask to install the 'remotes' package if GitHub packages are missing and 'remotes' is not installed
+  if (length(missingGithubPackages) > 0 && !requireNamespace("remotes", quietly = TRUE)) {
+    response <- readline(prompt = "The 'remotes' package is required to install GitHub packages. Install 'remotes'? (y/n): ")
+    if (tolower(response) == "y") {
+      install.packages("remotes")
+    } else {
+      cat("Skipping installation of GitHub packages.\n")
+      missingGithubPackages <- c() # Clear the list of GitHub packages
+    }
+  }
+
+  # Install missing GitHub packages
+  if (length(missingGithubPackages) > 0) {
+    cat("The following GitHub packages are missing: ", paste(missingGithubPackages, collapse = ", "))
+    response <- readline(prompt = "\nDo you want to install the missing GitHub packages? (y/n): ")
+    if (tolower(response) == "y") {
+      for (package in missingGithubPackages) {
+        remotes::install_github(package)
+        packageName <- unlist(strsplit(package, "/"))[2]
+        require(packageName, character.only = TRUE)
+      }
+    } else {
+      cat("Skipping installation of missing GitHub packages.\n")
+    }
+  }
+
+  cat("All specified packages installed and loaded.\n")
+}
+
+
+install.and.load.packages(packageList)
+
+```
+
+
+```{r}
+
+sRockiesFIA <- rFIA::getFIA(states = c('CO', 'NM', 'WY'))
+
+
+```
