@@ -23,16 +23,16 @@
 
 5. From the workshop page, find the workshop titled "Forest Carbon Codefest". It should look like this:
 
-![workshop tile](./assets/fcc-workshop-tile.png)
+![workshop tile](../assets/fcc-workshop-tile.png)
 
 6. Click on the tile, and then on the page for the workshop, click, "Enroll" at upper right. You should be enrolled automatically if you are using the email you have given our team.
 
-![workshop enroll](./assets/workshop-enroll.png)
+![workshop enroll](../assets/workshop-enroll.png)
 
 
 7. Head over to the Cyverse Discovery Environment by clicking on 'Services' at the upper right and then 'Discovery Environment' under 'My Services'.
 
-![user portal](./assets/cyverse-user-portal.png)
+![user portal](../assets/cyverse-user-portal.png)
 
 
    You should now see the Discovery Environment:
@@ -68,6 +68,11 @@
    <img width="1004" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/b7702aee-b561-440d-92a9-daa9990a7f96">
 
 ## Set up your GitHub credentials
+
+### If you would prefer to follow a video instead of a written outline, we have prepared a video here:
+<a href="https://www.youtube.com/watch?v=nOwOzPJEQbU">
+    <img src="https://img.youtube.com/vi/nOwOzPJEQbU/0.jpg" style="width: 100%;">
+</a>
 
 1. From Jupyter Lab, click on the GitHub icon on the left menu:
 
