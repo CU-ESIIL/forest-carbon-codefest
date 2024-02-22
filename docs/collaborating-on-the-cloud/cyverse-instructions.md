@@ -16,22 +16,30 @@
 
 4. From your account, go to the navigation bar at left and select 'Workshops'
 
-![Forest pixel banner](./assets/cyverse-user-portal.png)
+   <img width="881" alt="image" src="https://github.com/CU-ESIIL/forest-carbon-codefest/assets/3465768/41970a8d-c434-4075-9dd4-fbcd0f2ea07c">
 
 
+![user portal](./assets/cyverse-user-portal.png)
+
+5. From the workshop page, find the workshop titled "Forest Carbon Codefest". It should look like this:
+
+![workshop tile](./assets/fcc-workshop-tile.png)
+
+6. Click on the tile, and then on the page for the workshop, click, "Enroll" at upper right. You should be enrolled automatically if you are using the email you have given our team.
+
+![workshop enroll](./assets/workshop-enroll.png)
 
 
+7. Head over to the Cyverse Discovery Environment by clicking on 'Services' at the upper right and then 'Discovery Environment' under 'My Services'.
 
-3. Head over to the Cyverse Discovery Environment [https://de.cyverse.org](https://de.cyverse.org), and log in with your new account.
+![user portal](./assets/cyverse-user-portal.png)
 
-   <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/41970a8d-c434-4075-9dd4-fbcd0f2ea07c">
 
    You should now see the Discovery Environment:
 
    <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/0dcd0048-a4e3-469c-bd28-5a5574c5dec3">
 
 
-4. We will give you permissions to access the Hackathon app. If you haven't already, let us know that you need access
 
 ## Open up an analysis with the hackathon environment (Jupyter Lab)
 
