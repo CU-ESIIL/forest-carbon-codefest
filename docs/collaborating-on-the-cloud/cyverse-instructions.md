@@ -16,7 +16,7 @@
 
 4. From your account, go to the navigation bar at left and select 'Workshops'
 
-   <img width="881" alt="image" src="https://github.com/CU-ESIIL/forest-carbon-codefest/assets/3465768/41970a8d-c434-4075-9dd4-fbcd0f2ea07c">
+   <img width="881" alt="image" src="https://github.com/CU-ESIIL/forest-carbon-codefest/assets/cyverse-user-portal.png">
 
 
 ![user portal](./assets/cyverse-user-portal.png)
