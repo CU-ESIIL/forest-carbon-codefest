@@ -10,7 +10,7 @@ At the end of the event, projects will be judged by the participant community an
 
 Our passionate cohort of participants for the event includes individuals from academia, land management, and industry, across a range of career stages.
 
-Code generated from the event can be found on [our GitHub repo](https://github.com/earthlab/forest-carbon-codefest-2024), and is available for use under an MIT license.
+Code generated for the event can be found on [our GitHub repo](https://github.com/CU-ESIIL/forest-carbon-codefest), and is available for use under an MIT license.
 
 # Details
 

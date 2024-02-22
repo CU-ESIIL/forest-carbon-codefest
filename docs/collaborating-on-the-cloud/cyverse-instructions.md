@@ -1,4 +1,4 @@
-# Connecting Cyverse to GitHub
+# Connecting to Cyverse and GitHub
 
 ## Log in to Cyverse
 
@@ -6,9 +6,21 @@
 
 <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/61b8c22a-bed3-457a-b603-736fd8e59568">
 
-2. Click `Sign up` (if you do not already have an account)
+2. Click `Sign up` (if you do not already have an account). When you make this account, please use the email that you have been using to communicate with our team regarding the event. That email is attached to our CyVerse workshop.
 
    <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/73dc39a4-30f2-4017-8f0d-1006db24d25b">
+
+3. Log in to Cyverse [https://user.cyverse.org/](https://user.cyverse.org/) with your new account.
+
+   <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/41970a8d-c434-4075-9dd4-fbcd0f2ea07c">
+
+4. From your account, go to the navigation bar at left and select 'Workshops'
+
+![Forest pixel banner](./assets/cyverse-user-portal.png)
+
+
+
+
 
 3. Head over to the Cyverse Discovery Environment [https://de.cyverse.org](https://de.cyverse.org), and log in with your new account.
 
@@ -17,6 +29,7 @@
    You should now see the Discovery Environment:
 
    <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/0dcd0048-a4e3-469c-bd28-5a5574c5dec3">
+
 
 4. We will give you permissions to access the Hackathon app. If you haven't already, let us know that you need access
 

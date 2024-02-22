@@ -14,7 +14,7 @@ copyright: 'Copyright &copy; 2023 University of Colorado Boulder'
 nav:
   - Home: index.md
   - Collaboration in the Cloud:
-    - Connecting CyVerse to GitHub: collaborating-on-the-cloud/cyverse-instructions.md
+    - Using CyVerse: collaborating-on-the-cloud/cyverse-instructions.md
 
 # Configuration
 theme:
