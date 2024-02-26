@@ -40,7 +40,7 @@ pft_legend <- c('Water Bodies', 'Evergreen Needleleaf Trees', 'Evergreen Broadle
                 'Cereal Croplands', 'Broadleaf Croplands', 'Urban and Built-up Lands', 
                 'Permanent Snow and Ice', 'Barren', 'Unclassified')
 
-names(pft_legend) <- as.character(0:11)
+names(pft_legend) <- as.character(0:12)
 
 # Creating mask with good quality shots and trees/shrubs pft class
 mask <- l4a_df$l4_quality_flag == 1 & l4a_df$`land_cover_data/pft_class` <= 5
