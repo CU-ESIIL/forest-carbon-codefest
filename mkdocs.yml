@@ -13,6 +13,9 @@ copyright: 'Copyright &copy; 2023 University of Colorado Boulder'
 # Page tree
 nav:
   - Home: index.md
+  - Testing:
+       - Testing 2:
+         - Code of Conduct: resources/code-of-conduct.md
   - Resources:
        - Code of Conduct: resources/code-of-conduct.md
        - Participant agreement: resources/participant_agreement.md
