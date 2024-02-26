@@ -13,20 +13,19 @@ copyright: 'Copyright &copy; 2023 University of Colorado Boulder'
 # Page tree
 nav:
   - Home: index.md
-  - Testing:
-       - Testing 2:
-         - Code of Conduct: resources/code-of-conduct.md
-  - Resources:
-       - Code of Conduct: resources/code-of-conduct.md
-       - Participant agreement: resources/participant_agreement.md
+  - Collaborating on the cloud:
+       - Code of Conduct: collaborating-on-the-cloud/code-of-conduct.md
+       - Participant agreement: collaborating-on-the-cloud/participant_agreement.md
+       - Markdown: collaborating-on-the-cloud/markdown_basics.md
+       - Cyverse basics: resources/cyverse_basics.md
+       - Github basics: collaborating-on-the-cloud/github_basics.md
+       - Cyverse hacks: collaborating-on-the-cloud/cyverse_hacks.md
        - R and Python bilingualism: resources/bilingualism_md.md
+  - Codefest data library:
        - STAC: resources/stac_mount_save.md
        - Sentinal 2 STAC example: resources/Pull_Sentinal2_l2_data.md
-       - Markdown: resources/markdown_basics.md
-       - Cyverse basics: resources/cyverse_basics.md
-       - Github basics: resources/github_basics.md
-       - Cyverse hacks: resources/cyverse_hacks.md
-       - Working groups: resources/working_groups_and_postdocs.md
+       
+
   - Notes:
        - OASIS orientation: resources/pre_meeting_notes.md
   - Code documentation:
