@@ -12,8 +12,8 @@ copyright: 'Copyright &copy; 2023 University of Colorado Boulder'
 
 # Page tree
 nav:
-   - Home: index.md
-   - Resources:
+  - Home: index.md
+  - Resources:
        - Code of Conduct: resources/code-of-conduct.md
        - Participant agreement: resources/participant_agreement.md
        - R and Python bilingualism: resources/bilingualism_md.md
@@ -24,15 +24,15 @@ nav:
        - Github basics: resources/github_basics.md
        - Cyverse hacks: resources/cyverse_hacks.md
        - Working groups: resources/working_groups_and_postdocs.md
-   - Notes:
+  - Notes:
        - OASIS orientation: resources/pre_meeting_notes.md
-   - Code documentation:
+  - Code documentation:
        - Data processing: resources/data_processing.md
        - Data analysis: resources/data_analysis.md
        - Visualizations: resources/visualizations.md 
-   - Manuscript drafts:
+  - Manuscript drafts:
        - Manuscript: resources/manuscript.md
-   - References:
+  - References:
        - Notes from readings: resources/notes_from_readings.md
        - Citations: resources/citations.md
 
