@@ -39,6 +39,8 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+#User-added directories
+data/*
 
 
 # translation temp files
