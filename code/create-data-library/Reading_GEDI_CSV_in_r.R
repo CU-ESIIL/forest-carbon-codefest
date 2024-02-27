@@ -1,4 +1,6 @@
 ### This file reads, filter basedo on qulaity flag and ecoregion, and plots GEDI biomass data in csv format.
+# ESIIL, 2024
+# Nayani Ilangakoon
 
 # Load necessary libraries
 library(readr) # For read_csv
@@ -7,12 +9,16 @@ library(ggplot2) # For plotting
 library(tidyr) # For data tidying
 library(forcats)
 
+###############
+# NOTE: This script is reading the data directly from the data store. It is only actually opening and processing a single csv
+# If you want to use all of the GEDI data that has been made available for your use, you will want to move it
+# to your cyverse instance to improve performance
+###############
 
 # Define the root path to the data drive
-ROOT_PATH <- "E:/MTBS_Data"
-
+ROOT_PATH <- "~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest"
 # Create the path to the GEDI data by appending the directory name to the root path
-indir <- file.path(ROOT_PATH, "SA_tiles")
+indir <- file.path(ROOT_PATH, "GEDI/GEDI_SR_footprint_data/GEDI_biomass_SR")
 
 # List the contents of the indir directory
 list.files(indir)
