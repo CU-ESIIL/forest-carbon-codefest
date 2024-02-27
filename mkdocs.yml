@@ -25,7 +25,7 @@ nav:
   - Codefest data library:
        - STAC: resources/stac_mount_save.md
        - Sentinal 2 STAC example: resources/Pull_Sentinal2_l2_data.md
-       
+       - Forest Inventory Analysis Database: data-library/fia.md
 
   - Project documentation:
        - Discussion notes: project-documentation/project-notes.md
