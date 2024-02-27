@@ -29,6 +29,7 @@ out_csv <- file.path(indir, "recovery_treat_bms_64.csv")
 # Reading the csv file created in the last step
 l4a_df <- read_csv(out_csv)
 
+# Assign "NA" to the values that needs to be discarded.
 l4a_df <- l4a_df %>%
   mutate(agbd = if_else(agbd == -9999,NA_real_,agbd))
 
@@ -42,6 +43,7 @@ pft_legend <- c('Water Bodies', 'Evergreen Needleleaf Trees', 'Evergreen Broadle
                 'Cereal Croplands', 'Broadleaf Croplands', 'Urban and Built-up Lands', 
                 'Permanent Snow and Ice', 'Barren', 'Unclassified')
 
+# label PFT classes with numbers
 names(pft_legend) <- as.character(0:12)
 
 # Creating mask with good quality shots and trees/shrubs pft class
