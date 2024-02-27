@@ -6,6 +6,7 @@
 # Tyler L. McIntosh
 
 options(timeout = 300)
+require(readr)
 
 ################################
 # DOWNLOAD INDIVIDUAL FIA DATASETS
