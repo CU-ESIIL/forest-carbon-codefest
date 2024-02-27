@@ -46,16 +46,15 @@
 
 2. Select `JupyterLab ESIIL`
 
-   <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/31bdaedf-efa7-4778-bd3b-b790efa128b9">
+![select jupyterlab esiil](../assets/select-j-esiil.png)
 
 3. Configure and launch your analysis - the defaults are fine for now:
 
-   <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/1108f008-3c4d-4216-80f6-fa6f9a63248f">
+![defaults1](../assets/defaults1.png)
 
   <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/b82f08d7-4d21-4fba-9e40-f0a4ac492898">
 
-  <img width="881" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/ecb6051c-17bc-4e79-a40a-04d5949ed472">
-
+![defaults3](../assets/defaults3.png)
 
 4. Click `Go to analysis`:
 
