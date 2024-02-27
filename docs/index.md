@@ -1,4 +1,4 @@
-![Forest pixel banner](./assets/ForestBanner_NASA_Imagery.png)
+![Forest pixel banner](./assets/codefest_hero.png)
 
 # Forest Carbon CodeFest
 
@@ -10,7 +10,7 @@ At the end of the event, projects will be judged by the participant community an
 
 Our passionate cohort of participants for the event includes individuals from academia, land management, and industry, across a range of career stages.
 
-Code generated for the event can be found on [our GitHub repo](https://github.com/CU-ESIIL/forest-carbon-codefest), and is available for use under an MIT license.
+Code generated for the event can be found on [our GitHub repo](https://github.com/CU-ESIIL/forest-carbon-codefest) (or, in the case of team code products, linked on our GitHub repo), and is available for use under an MIT license.
 
 # Details
 
@@ -18,15 +18,7 @@ Code generated for the event can be found on [our GitHub repo](https://github.co
 In-person at the University of Colorado, Boulder  
 
 ## When  
-March 12-14, 2024  
-Detailed agenda to come.  
-3-4 virtual 1-2 hour pre-training and team formation sessions will span  
-the 4 weeks before the event. Exact dates and times for these sessions are TBD.
-
-- Day 1: March 12, 2024, 9am - 4pm MST
-- Day 2: March 13, 2024, 9am - 4pm MST 
-- Day 3: March 14, 2024, 9am - 1pm MST
-
+March 12-14, 2024
 
 # Event Documents
 
