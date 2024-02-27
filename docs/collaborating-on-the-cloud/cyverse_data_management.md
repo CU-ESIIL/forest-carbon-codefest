@@ -6,7 +6,7 @@ The best and most efficient way to access most data from within your Cyverse ins
 
 ## Pre-downloaded data on Cyverse data store
 
-Some data can be time consuming or frustrating to access. In an attempt to streamline your projects, the ESIIL and Earth Lab teams have loaded a set of data onto the Cyverse data store, which can be read from your Cyverse instance.
+Some data can be time consuming or frustrating to access. Or, you or one of your teammates may just be much more comfortable working with data that has effectively been 'downloaded locally'. In an attempt to streamline your projects, the ESIIL and Earth Lab teams have loaded a set of data onto the Cyverse data store, which can be read from your Cyverse instance.
 
 Pre-downloaded data for the Forest Carbon Codefest can be found in the Cyverse data store at [this link.](https://de.cyverse.org/data/ds/iplant/home/shared/earthlab/forest_carbon_codefest?type=folder&resourceId=74dd0094-8d46-11ee-a930-90e2ba675364)
 
