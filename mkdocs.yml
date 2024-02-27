@@ -31,7 +31,8 @@ nav:
        - Discussion notes: project-documentation/project-notes.md
        - Data processing: resources/data_processing.md
        - Data analysis: resources/data_analysis.md
-       - Visualizations: resources/visualizations.md 
+       - Visualizations: resources/visualizations.md
+       - Project presentation: project-documentation/project-presentation.md
   - Manuscript drafts:
        - Manuscript: resources/manuscript.md
   - References:
