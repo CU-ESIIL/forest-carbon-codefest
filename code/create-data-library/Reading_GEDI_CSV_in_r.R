@@ -1,3 +1,5 @@
+### This file reads, filter basedo on qulaity flag and ecoregion, and plots GEDI biomass data in csv format.
+
 # Load necessary libraries
 library(readr) # For read_csv
 library(dplyr) # For data manipulation
@@ -6,7 +8,7 @@ library(tidyr) # For data tidying
 library(forcats)
 
 
-# Define the root path to the MTBS Data
+# Define the root path to the data drive
 ROOT_PATH <- "E:/MTBS_Data"
 
 # Create the path to the GEDI data by appending the directory name to the root path
