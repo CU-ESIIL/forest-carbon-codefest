@@ -100,7 +100,7 @@ fia_download_individual_data_files <- function(state_abbreviations, file_suffixe
 #### PARAMETERS ####
 # state_abbreviations : a vector of state abbreviations as strings (e.g. c("CO", "WY", "NM"))
 # directory : the directory in which to store the data
-# bulk_data_types : a vector of bulk download mappings as strings (e.g. c("location level", "plot")) from https://www.fs.usda.gov/research/understory/forest-inventory-and-analysis-database-user-guide-phase-2
+# bulk_data_types : a vector of bulk download mappings as strings (e.g. c("location level", "plot")) 
 #       Available data mappings are:
           # "location level"
           # "tree level"
