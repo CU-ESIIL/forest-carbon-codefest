@@ -18,11 +18,12 @@ nav:
        - Cyverse basics: collaborating-on-the-cloud/cyverse-instructions.md
        - Github basics: collaborating-on-the-cloud/github-basics.md
        - Cyverse data management: collaborating-on-the-cloud/cyverse_data_management.md
-  - Additional resources
-       - Code of Conduct: collaborating-on-the-cloud/code-of-conduct.md
-       - Participant agreement: collaborating-on-the-cloud/participant_agreement.md
-       - Cyverse hacks: collaborating-on-the-cloud/cyverse_hacks.md
-       - R and Python bilingualism: collaborating-on-the-cloud/bilingualism_md.md
+  - Additional resources:
+       - Code of Conduct: additional-resources/code-of-conduct.md
+       - Participant agreement: additional-resources/participant_agreement.md
+       - R and Python bilingualism: additional-resources/bilingualism_md.md
+       - Cyverse hacks: additional-resources/cyverse_hacks.md
+       - Useful links: additional-resources/useful_links.md
   - Codefest data library:
        - EPA Ecoregions: data-library/epa-ecoregions.md
        - Forest Inventory Analysis Database: data-library/fia.md
