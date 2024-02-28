@@ -1,8 +1,8 @@
 # Transitioning Workflows to CyVerse: Tips & Tricks
 
-## Earth Lab Data Storage
-- **Path:** `/home/jovyan/data-store/iplant/home/shared/earthlab/`
-- Ensure your project has a directory within the Earth Lab data storage.
+## Forest Carbon Codefest Data Storage
+- **Path:** `~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest/`
+- Your team has a subdirectory within the Team_outputs directory.
 
 ## Setup
 1. **CyVerse Account:**
@@ -10,7 +10,7 @@
    - Contact Tyson for account upgrades after maximizing current limits.
 
 ## GitHub Connection
-- Follow Elsa Culler's guide for connecting GitHub to CyVerse.
+- Follow [the guide for connecting GitHub to CyVerse](https://cu-esiil.github.io/forest-carbon-codefest/collaborating-on-the-cloud/cyverse-instructions/)
 - Select “JupyterLab ESIIL” and choose “macrosystems” in the version dropdown.
 - Clone into `/home/jovyan/data-store`.
 - Clone `innovation-summit-utils` for SSH connection to GitHub.
@@ -19,7 +19,7 @@
 
 ## RStudio in Discovery Environment
 1. Copy your instance ID. It can be found in your analyis URL in form https://<instance_id>.cyverse.run/lab.
-2. Use your ID in these links:  
+2. Use your ID in these links and run them each, in sequence, in the same browser window:  
    - `https://<id>.cyverse.run/rstudio/auth-sign-in` 
    - `https://<id>.cyverse.run/rstudio/` 
 

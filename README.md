@@ -1,26 +1,23 @@
-# [Your Working Group Name]
+# [Your Team Name]
 
-Welcome to the **[Your Working Group Name]** repository, an integral part of the Environmental Data Science Innovation and Inclusion Lab (ESIIL). This repository is the central hub for our working group, encompassing our project overview, proposals, team member information, codebase, and more...
+Welcome to the **[Your Team Name]** repository, an integral part of ESIIL and Earth Lab's Forest Carbon Codefest. This repository is the central hub for our team, encompassing our project overview, team member information, codebase, and more...
 
 ## Our Project
-[Provide a brief overview of your project here. Describe what you aim to achieve, the importance of your project, and its expected impact.]
+[Provide a brief overview of your project here.
 
 ## Documentation
 - Access detailed documentation on our [GitHub Pages site](https://your-gh-pages-url/).
-- Find comprehensive guides, tutorials, and additional resources.
 
-## Project Proposal
-[Link to the detailed project proposal document or include it directly in the repository. Outline the goals, methodologies, anticipated challenges, and projected timelines.]
 
 ## Group Members
-- Member 1: Brief description or role within the group.
-- Member 2: Brief description or role within the group.
+- Member 1: Brief description
+- Member 2: Brief description
 - ...
-- [Link to more detailed bios or profiles if available.]
+- [Link to more detailed bios or profiles if available and desired.]
 
-## Repository Structure
-- **Analysis Code**: Scripts for data analysis, statistical modeling, etc.
+## Code Repository Structure
 - **Data Processing**: Scripts for cleaning, merging, and managing datasets.
+- **Analysis Code**: Scripts for data analysis, statistical modeling, etc.
 - **Visualization**: Code for creating figures, charts, and interactive visualizations.
 
 ## Meeting Notes and Agendas
@@ -48,4 +45,4 @@ Welcome to the **[Your Working Group Name]** repository, an integral part of the
 - **Review and Merge Workflow**: Document your process for reviewing and merging changes.
 - **Establish Communication Channels**: Set up channels like Slack or Discord for discussions.
 
-Remember, the goal is to make your repository clear, accessible, and useful for all current and future members of your working group. Happy researching!
+Remember, the goal is to make your repository clear, accessible, and useful for all current and future researchers. Happy researching!
