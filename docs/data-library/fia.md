@@ -2,6 +2,12 @@
 
 ## Database description
 
+The Forest Inventory and Analysis (FIA) program of the USDA Forest Service Research and Development Branch collects, processes, analyzes, and reports on data necessary for assessing the extent and condition of forest resources in the United States.
+
+This data is collected at the plot level across the US, and includes information such as tree quantity and identifications, downed woody materials, tree regeneration, and more. If you are looking for spatially continuous data, TreeMap is a data product derived from FIA data and uses machine learning algorithms to assign each forested pixel across the US with the id of the FIA plot that best matches it.
+
+[This is an overview of the FIA program.](https://www.fs.usda.gov/research/programs/fia)
+
 [This is the most recent user guide for the FIADB.](https://www.fs.usda.gov/research/understory/forest-inventory-and-analysis-database-user-guide-phase-2)
 
 ## Prepared data access functions
