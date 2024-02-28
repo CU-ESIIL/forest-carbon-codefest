@@ -6,6 +6,6 @@ The main output of this project is a raster map of imputed plot identifiers at 3
 
 [An overview of the data product can be found here.](https://www.fs.usda.gov/rds/archive/Catalog/RDS-2021-0074)
 
-[The TreeMap data dictionary PDF can be found here.]()
+[The TreeMap data dictionary PDF can be found here.](https://github.com/CU-ESIIL/forest-carbon-codefest/blob/main/docs/assets/TreeMap2016_Data_Dictionary.pdf)
 
 A portion of the TreeMap dataset covering the Southern Rockies has been prepared and placed in the CyVerse data store. The associated CSV and SQL DB files are in the same location. A script showing how to access it, as well as how the raster was accessed, is available in the code repository.
