@@ -8,7 +8,7 @@ repo_name: forest-carbon-codefest
 repo_url: https://github.com/CU-ESIIL/forest-carbon-codefest
 edit_uri: edit/main/docs/
 # Copyright
-copyright: 'Copyright &copy; 2023 University of Colorado Boulder'
+copyright: 'Copyright &copy; 2024 University of Colorado Boulder'
 
 # Page tree
 nav:
@@ -25,11 +25,14 @@ nav:
        - R and Python bilingualism: collaborating-on-the-cloud/bilingualism_md.md
   - Codefest data library:
        - EPA Ecoregions: data-library/epa-ecoregions.md
+       - Forest Inventory Analysis Database: data-library/fia.md
+       - GEDI: data-library/gedi.md
+       - TreeMap: data-library/treemap.md
+       - Disturbance stack: data-library/disturbance-stack.md
+       - Fire Severity (CBI): data-libary/fire-cbi.md
        - STAC: resources/stac_mount_save.md
        - Sentinal 2 STAC example: resources/Pull_Sentinal2_l2_data.md
-       - Forest Inventory Analysis Database: data-library/fia.md
-       - Disturbance stack: data-library/disturbance-stack.md
-       - Fire CBI: data-libary/fire-cbi.md
+       - Additional ESIIL Data Libraries: data-library/esiil-data-library.md
   - Project documentation:
        - Discussion notes: project-documentation/project-notes.md
        - Methods: project-documentation/methods.md
