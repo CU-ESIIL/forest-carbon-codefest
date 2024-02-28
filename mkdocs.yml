@@ -32,6 +32,7 @@ nav:
        - Disturbance stack: data-library/disturbance-stack.md
        - Fire Severity (CBI): data-library/fire-cbi.md
        - LCMAP (Land cover): data-library/lcmap.md
+       - MODIS Vegetation Continuous Fields (VCF): data-library/modis-vcf.md
        - Drought indices (SPEI & PDSI): data-library/drought.md
        - STAC & VSI: data-library/stac_mount_save.md
        - Sentinal 2 STAC example: data-library/Pull_Sentinal2_l2_data.md
