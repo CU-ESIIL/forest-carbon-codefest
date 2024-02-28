@@ -91,9 +91,9 @@
 
    <img width="1004" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/bbc0955b-008a-4376-9d4e-9644982ccb8c">
 
-6. open up the `configure_github_ssh.ipynb` notebook by double-clicking:
+6. open up the `create_github_keypair.ipynb` notebook by double-clicking:
 
-   <img width="1004" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/a3cbf78c-b1ce-448b-b02b-a648fd074136">
+![create github keypair](../assets/create-github-keypair.png)
 
 7. Select the default `earth-analytics-python` kernel
 
