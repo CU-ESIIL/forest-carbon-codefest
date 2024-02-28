@@ -31,6 +31,7 @@ nav:
        - TreeMap: data-library/treemap.md
        - Disturbance stack: data-library/disturbance-stack.md
        - Fire Severity (CBI): data-library/fire-cbi.md
+       - LCMAP (Land cover): data-library/lcmap.md
        - STAC: resources/stac_mount_save.md
        - Sentinal 2 STAC example: resources/Pull_Sentinal2_l2_data.md
        - Additional ESIIL Data Libraries: data-library/esiil-data-library.md
