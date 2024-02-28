@@ -15,10 +15,9 @@ system("cp -r ~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefe
 treemap <- terra::rast("~/TreeMap/treemap2016_southernrockies.tif")
 terra::plot(treemap)
 
+treemapCsv <- readr::read_csv("~/TreeMap/TreeMap2016_tree_table.csv")
 
-
-
-
+head(treemapCsv
 
 
 
