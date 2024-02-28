@@ -95,7 +95,7 @@
 
 ![create github keypair](../assets/create-github-keypair.png)
 
-7. Select the default `earth-analytics-python` kernel
+7. Select the default kernel
 
    <img width="1004" alt="image" src="https://github.com/CU-ESIIL/hackathon2023_datacube/assets/3465768/7a59013b-160d-4a91-81d8-e64f77acbbfe">
 
