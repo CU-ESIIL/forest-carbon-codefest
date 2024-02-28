@@ -2,7 +2,7 @@
 
 ## Cloud-to-instance data access
 
-The best and most efficient way to access most data from within your Cyverse instance is via APIs or STAC. Examples of such data access can be found throughout the data library. This is the preferred method of data access since it keeps data on the cloud, puts it directly on your instance, and then the data is removed upon instance termination. Note that any data you want to keep must be moved off the instance and to the Cyverse data store prior to instance termination (see below, "Saving data from your instance to the data store").
+The best and most efficient way to access most data from within your Cyverse instance is via APIs, VSI, or STAC. Examples of such data access can be found throughout the data library. This is the preferred method of data access since it keeps data on the cloud, puts it directly on your instance, and then the data is removed upon instance termination. Note that any data you want to keep must be moved off the instance and to the Cyverse data store prior to instance termination (see below, "Saving data from your instance to the data store").
 
 ## Pre-downloaded data on Cyverse data store
 
