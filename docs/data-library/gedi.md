@@ -4,7 +4,7 @@ The Global Ecosystem Dynamics Investigation (GEDI) is a joint mission between NA
 
 [The GEDI homepage is located here](https://gedi.umd.edu/).
 
-GEDI footprints over the Southern Rocky Mountains have been downloaded and placed on the Cyverse data store at the below path. The data are from 2019-2022, and are in the form of tiled CSV files.
+GEDI data is collected in footprints of ~25m along the track of the sensor. Each footprint is separated by 60m. GEDI footprints over the Southern Rocky Mountains have been downloaded by Dr. Nayani Ilangakoon and placed on the Cyverse data store at the below path. The data are from 2019-2022, and are in the form of tiled CSV files.
 
 ```
 ~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest/GEDI
