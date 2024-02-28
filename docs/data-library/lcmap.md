@@ -12,3 +12,5 @@ To accelerate your access to this dataset, the ESIIL team has made LCMAP 1.3 Pri
 
 Additional LCMAP layers and products may be accessed via STAC and VSI.
 
+The script used to download the LCMAP data already available is located in the GitHub repo at /code/create-data-library/LCMAP_Direct_Access-adapted.ipynb.
+
