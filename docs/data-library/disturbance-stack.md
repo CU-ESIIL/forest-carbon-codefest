@@ -36,9 +36,9 @@ The simplified version (simple_dist_stack_Southern_Rockies.tif) has the below va
 
 | Code | Landfire disturbance status | Hotter-drought status                          |
 |------|-----------------------------|------------------------------------------------|
-| 0    | none                        | no hotter-drought/fewer than 4 thresholds exceeded |
-| 1    | fire                        | no hotter-drought/fewer than 4 thresholds exceeded |
-| 2    | insect/disease              | no hotter-drought/fewer than 4 thresholds exceeded |
+| 0    | none                        | no hotter-drought/fewer than 6 thresholds exceeded |
+| 1    | fire                        | no hotter-drought/fewer than 6 thresholds exceeded |
+| 2    | insect/disease              | no hotter-drought/fewer than 6 thresholds exceeded |
 | 3    | none  | hotter-drought with 6 thresholds exceeded |
 | 4    | fire                        | hotter-drought with 6 thresholds exceeded |
 | 5    | insect/disease              | hhotter-drought with 6 thresholds exceeded |
