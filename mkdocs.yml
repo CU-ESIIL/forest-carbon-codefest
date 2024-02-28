@@ -33,8 +33,8 @@ nav:
        - Fire Severity (CBI): data-library/fire-cbi.md
        - LCMAP (Land cover): data-library/lcmap.md
        - Drought indices (SPEI & PDSI): data-library/drought.md
-       - STAC: resources/stac_mount_save.md
-       - Sentinal 2 STAC example: resources/Pull_Sentinal2_l2_data.md
+       - STAC & VSI: data-library/stac_mount_save.md
+       - Sentinal 2 STAC example: data-library/Pull_Sentinal2_l2_data.md
        - Additional ESIIL Data Libraries: data-library/esiil-data-library.md
   - Project documentation:
        - Discussion notes: project-documentation/project-notes.md
