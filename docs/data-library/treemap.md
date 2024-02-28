@@ -29,12 +29,14 @@ require(terra)
 system("cp -r ~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest/TreeMap ~/TreeMap
 ")
 
+#Open the raster
 treemap <- terra::rast("~/TreeMap/treemap2016_southernrockies.tif")
 terra::plot(treemap)
 
+#Open the csv
 treemapCsv <- readr::read_csv("~/TreeMap/TreeMap2016_tree_table.csv")
 
-head(treemapCsv
+head(treemapCsv)
 
 
 
