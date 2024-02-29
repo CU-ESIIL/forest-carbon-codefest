@@ -1,6 +1,6 @@
 # Earth Lab Disturbance Stack derived from Landfire
 
-The CU Boulder Earth Lab has integrated annual disturbance presence data from Landfire with a new index of hotter drought into an easily managed raster data stack.
+The CU Boulder Earth Lab has integrated annual (1999-2020) disturbance presence data from Landfire with a new index of hotter drought into an easily managed raster data stack.
 
 To accelerate your access to this dataset, the ESIIL team has made disturbance stack data for the Southern Rockies available on the Cyverse data store at the below directory:
 
