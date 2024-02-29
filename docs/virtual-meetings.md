@@ -5,6 +5,7 @@ There are three virtual meetings associated with the Forest Carbon Codefest. The
 ## Virtual meeting #1
 
 This orientation meeting focused a number of broad underlying themes related to data, open science, and teamwork.
+
 - Introduction to ESIIL and the event
 - Working in diverse groups and what makes good teams
 - Data sovereignty and responsible use
