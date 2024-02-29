@@ -24,3 +24,7 @@ This training focused on the use of markdown, github, and cyverse for cloud-base
 <a href="https://www.youtube.com/watch?v=49IDCh4uXeE">
     <img src="https://img.youtube.com/vi/49IDCh4uXeE/0.jpg" style="width: 50%;">
 </a>
+
+## Virtual meeting #3
+
+Coming soon!
