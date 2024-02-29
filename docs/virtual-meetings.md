@@ -19,6 +19,8 @@ This orientation meeting focused a number of broad underlying themes related to 
 
 This training focused on the use of markdown, github, and cyverse for cloud-based collaboration and documentation of codefest projects.
 
+[The spreadsheet to record your github username is here](https://docs.google.com/spreadsheets/d/19zawYwpcHoXfNkH_OBOjkN4yeA6ih9_ZSFCQzDZVW5U/edit?usp=sharing). Note that it may take a few days to get your username added to the github team required to push and pull from the team repos.
+
 <a href="https://www.youtube.com/watch?v=49IDCh4uXeE">
     <img src="https://img.youtube.com/vi/49IDCh4uXeE/0.jpg" style="width: 50%;">
 </a>
