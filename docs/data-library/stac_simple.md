@@ -79,6 +79,8 @@ items = s |>
 
 # Print number of found items
 length(items$features)
+
+items
 ```
 
 There is data we want! Now, we need to prepare the assets for us to access. We will list the assets we want, and set any property filters that we would like to apply.
