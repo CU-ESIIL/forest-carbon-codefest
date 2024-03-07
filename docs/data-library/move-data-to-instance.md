@@ -6,7 +6,7 @@ While you CAN access that data directly on the data store, it is HIGHLY recommen
 
 Take, for instance, the treemap data.
 
-If we load and plot the data without moving it, it takes just a few seconds. Not bad.
+If we load and plot the data without moving it, it takes just a few seconds (i.e. ~2.973 seconds). Not bad.
 ```
 require(terra)
 require(tictoc)
@@ -16,14 +16,14 @@ terra::plot(treemap)
 tictoc::toc()
 ```
 
-However, if we load and plot the data after moving it, it takes less than a second. Even better! You will see far larger increases in speed as soon as you try to perform any more complex operations on the data.
+However, if we load and plot the data after moving it, it takes less than a second (i.e. ~0.302 seconds). Even better! This 10x increase in speed will add up incredibly quickly as soon as you start working more intensively with the data.
 
 ```
 require(terra)
 require(tictoc)
-system("cp -r ~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest/TreeMap ~/TreeMap #move the data first!!
+system("cp -r ~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest/TreeMap ~/TreeMap") #move the data first!!
 tictoc::tic()
-treemap <- terra::rast("~/data-store/data/iplant/home/shared/earthlab/forest_carbon_codefest/TreeMap/treemap2016_southernrockies.tif")
+treemap <- terra::rast("~/TreeMap/treemap2016_southernrockies.tif")
 terra::plot(treemap)
 tictoc::toc()
 ```
