@@ -30,6 +30,7 @@ nav:
   - Codefest data library:
        - TUTORIAL Moving data to your instance from the data store: data-library/move-data-to-instance.md
        - TUTORIAL Mounting data directly from a URL: data-library/mounting-via-vsi.md
+       - TUTORIAL Accessing data via STAC: data-library/stac_simple.md
        - TUTORIAL STAC & VSI: data-library/stac_mount_save.md
        - TUTORIAL Sentinal 2 STAC example: data-library/Pull_Sentinal2_l2_data.md
        - EPA Ecoregions: data-library/epa-ecoregions.md
