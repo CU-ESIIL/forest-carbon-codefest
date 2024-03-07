@@ -20,6 +20,7 @@ For example, you may have a url to a spatial dataset that you want to use, "http
 ### Figure out your archive contents
 
 In order to open a specific file within the zip archive, you need to know the names of the files within the archive. You can either:
+
   - Download the archive once, view the data structure, and then access it remotely from then on, or, a better solution is to...
   - Access the contents of the zip file using GDAL from a command-line environment
 
