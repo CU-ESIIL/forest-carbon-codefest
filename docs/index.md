@@ -14,6 +14,8 @@ Code generated for the event can be found on [our GitHub repo](https://github.co
 
 # Details
 
+## [Event living agenda is linked here](https://docs.google.com/document/d/1UPiDjg_5f5lV7603QF9W7XTl1GWIMb4dk6EYPIh6nlU/edit?usp=sharing)
+
 ## Where  
 In-person at the University of Colorado, Boulder  
 
