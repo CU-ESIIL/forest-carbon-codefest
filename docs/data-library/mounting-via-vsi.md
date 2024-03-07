@@ -7,7 +7,7 @@ Data can be directly accessed from where it is hosted on the internet, without t
 
 For spatial data, special protocols from the GDAL library can be used.
 
-The first part of enabling remote access is "vsicurl". This is a virtual file system handler in GDAL that allows access to files hosted on remote servers over protocols like HTTP, HTTPS, and FTP. When you prepend "vsicurl/" to a URL, GDAL reads the file directly from the remote location without downloading it entirely to the local disk. It's particularly useful for large files, as it only fetches the portions of the file needed for the current operation.
+The first part of enabling remote access is "vsicurl". VSI is GDAL's Virtual File System. This is a virtual file system handler allows access to files hosted on remote servers over protocols like HTTP, HTTPS, and FTP. When you prepend "vsicurl/" to a URL, GDAL reads the file directly from the remote location without downloading it entirely to the local disk. It's particularly useful for large files, as it only fetches the portions of the file needed for the current operation.
 
 The second part of enabling remote access to a zipped file (most large data files hosted online) is "vsizip". This is another virtual file system handler in GDAL that enables reading files inside zip archives as if they were unzipped, without the need to extract them manually. By using "vsizip/", you can directly access the contents of a zip file.
 

@@ -1,28 +1,50 @@
+# Accessing data via STAC
 
+ESIIL, 2024
+Ty Tuff & Tyler McIntosh
+
+SpatioTemporal Asset Catalog, is an open-source specification designed to standardize the way geospatial data is indexed and discovered. Developed by Element 84 among others, it facilitates better interoperability and sharing of geospatial assets by providing a common language for describing them. STAC’s flexible design allows for easy cataloging of data, making it simpler for individuals and systems to search and retrieve geospatial information. By effectively organizing data about the Earth’s spatial and temporal characteristics, STAC enables users to harness the full power of the cloud and modern data processing technologies, optimizing the way we access and analyze environmental data on a global scale.
+
+Element 84’s Earth Search is a STAC compliant search and discovery API that offers users access to a vast collection of geospatial open datasets hosted on AWS. It serves as a centralized search catalog providing standardized metadata for these open datasets, designed to be freely used and integrated into various applications. Alongside the API, Element 84 also provides a web application named Earth Search Console, which is map-centric and allows users to explore and visualize the data contained within the Earth Search API’s catalog. This suite of tools is part of Element 84’s initiative to make geospatial data more accessible and actionable for a wide range of users and applications.
+
+## First, we need an area of interest
+
+```
 require(glue)
 require(sf)
+require(gdalcubes)
+require(rstac)
 
+
+
+#Access ecoregiosn via VSI
 epa_l3 <- glue::glue(
   "/vsizip/vsicurl/", #magic remote connection
   "https://gaftp.epa.gov/EPADataCommons/ORD/Ecoregions/us/us_eco_l3.zip", #copied link to download location
   "/us_eco_l3.shp") |> #path inside zip file
   sf::st_read()
 
-#get just S.Rockies and ensure that it is in EPSG:4326
+#Get just S.Rockies and ensure that it is in EPSG:4326
 southernRockies <- epa_l3 |>
   dplyr::filter(US_L3NAME == "Southern Rockies") |>
   dplyr::group_by(US_L3NAME) |>
   dplyr::summarize(geometry = sf::st_union(geometry)) |>
   sf::st_transform("EPSG:4326")
 
-
 bboxSR4326 <- sf::st_bbox(southernRockies)
+```
 
+To access data from STAC correctly, we need to request the data in a projected CRS.
+```
 southernRockies <- southernRockies |> sf::st_transform("EPSG:32613")
 
 bboxSRproj <- sf::st_bbox(southernRockies)
+```
 
+## Search the STAC catalog
 
+To get information about a STAC archive, you can use rstac::get_request(). You can also use gdalcubes::collection_formats() to see various collection formats that you may encounter.
+```
 stac("https://earth-search.aws.element84.com/v1") |>
   get_request()
 ## ###STACCatalog
@@ -31,19 +53,22 @@ stac("https://earth-search.aws.element84.com/v1") |>
 ## - field(s): stac_version, type, id, title, description, links, conformsTo
 
 collection_formats()
+```
 
+Initialize a STAC connection (rstac::stac()) and search for data that you are interested in (rstac::stac_search()). Note that you will request a spatial area of interest as well as a temporal window of interest. To get more information on the data and how it is structured, you can examine the 'items' object we create.
 
+```
 # Record start time
 a <- Sys.time()
 
 # Initialize STAC connection
-s = stac("https://earth-search.aws.element84.com/v0")
+s = rstac::stac("https://earth-search.aws.element84.com/v0")
 
 
 # Search for Sentinel-2 images within specified bounding box and date range
 #22 Million items
 items = s |>
-  stac_search(collections = "sentinel-s2-l2a-cogs",
+  rstac::stac_search(collections = "sentinel-s2-l2a-cogs",
               bbox = c(bboxSR4326["xmin"], 
                        bboxSR4326["ymin"],
                        bboxSR4326["xmax"], 
@@ -54,51 +79,36 @@ items = s |>
 
 # Print number of found items
 length(items$features)
-## [1] 1
+```
 
+There is data we want! Now, we need to prepare the assets for us to access. We will list the assets we want, and set any property filters that we would like to apply.
+
+```
 # Prepare the assets for analysis
 library(gdalcubes)
 assets = c("B01", "B02", "B03", "B04", "B05", "B06", 
            "B07", 
            "B08", "B8A", "B09", "B11", "B12", "SCL")
-s2_collection = stac_image_collection(items$features, asset_names = assets,
+s2_collection = gdalcubes::stac_image_collection(items$features, asset_names = assets,
                                       property_filter = function(x) {x[["eo:cloud_cover"]] < 20}) #all images with less than 20% clouds
 
 b <- Sys.time()
 difftime(b, a)
-## Time difference of 0.4706092 secs
 
 # Display the image collection
 s2_collection
-## Image collection object, referencing 1 images with 13 bands
-## Images:
-##                       name      left      top   bottom     right
-## 1 S2B_13TDE_20210516_0_L2A -106.1832 40.65079 39.65576 -104.8846
-##              datetime        srs
-## 1 2021-05-16T18:02:54 EPSG:32613
-## 
-## Bands:
-##    name offset scale unit nodata image_count
-## 1   B01      0     1                       1
-## 2   B02      0     1                       1
-## 3   B03      0     1                       1
-## 4   B04      0     1                       1
-## 5   B05      0     1                       1
-## 6   B06      0     1                       1
-## 7   B07      0     1                       1
-## 8   B08      0     1                       1
-## 9   B09      0     1                       1
-## 10  B11      0     1                       1
-## 11  B12      0     1                       1
-## 12  B8A      0     1                       1
-## 13  SCL      0     1                       1
 
+```
+## Access the data
 
+First, we need to set up our view on the collection. We will set our spatial and temporal resolution, as well as how we want the data temporally aggregated and spatially resampled. We then also set our spatial and temporal window. Note that the spatial extent here should be in a projected CRS!
+
+```
 # Record start time
 a <- Sys.time()
 
 # Define a specific view on the satellite image collection
-v = cube_view(
+v = gdalcubes::cube_view(
   srs = "EPSG:32613",
   dx = 100, 
   dy = 100, 
@@ -117,22 +127,14 @@ v = cube_view(
 
 b <- Sys.time()
 difftime(b, a)
-## Time difference of 0.002738953 secs
 
 # Display the defined view
 v
-## A data cube view object
-## 
-## Dimensions:
-##                 low             high  count pixel_size
-## t        2021-05-01       2021-05-31      1        P1M
-## y -3103099.52398788 15434400.4760121 185375        100
-## x -3178878.98542359 15369521.0145764 185484        100
-## 
-## SRS: "EPSG:32720"
-## Temporal aggregation method: "median"
-## Spatial resampling method: "near"
+```
 
+Finally, let's take our snapshot of the data! Let's also calculate NDVI and then view the data.
+
+```
 # Record start time
 a <- Sys.time()
 
@@ -142,16 +144,12 @@ s2_collection |>
   apply_pixel(c("(B05-B04)/(B05+B04)"), names="NDVI") |>
   write_tif() |>
   raster::stack() -> x
+
+#View the product
 x
-## class      : RasterStack 
-## dimensions : 185375, 185484, 34384096500, 1  (nrow, ncol, ncell, nlayers)
-## resolution : 100, 100  (x, y)
-## extent     : -3178879, 15369521, -3103100, 15434400  (xmin, xmax, ymin, ymax)
-## crs        : +proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs 
-## names      : NDVI
 
 b <- Sys.time()
 difftime(b, a)
-## Time difference of  seconds!
 
+#Let's view the dat
 mapview::mapview(x, layer.name = "NDVI") + mapview::mapview(southernRockies)
