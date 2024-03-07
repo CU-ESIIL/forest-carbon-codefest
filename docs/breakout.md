@@ -1,30 +1,17 @@
-# Virtual meeting recordings
+# Breakout prompts
 
-There are three virtual meetings associated with the Forest Carbon Codefest. The recordings of those meetings are available here:
+For ease of access to breakout group prompts throughout the codefest
 
-## Virtual meeting #1
+## Breakout #1: Virtual meeting #3
 
-This orientation meeting focused a number of broad underlying themes related to data, open science, and teamwork.
+Introduce yourselves! Please briefly share:
+ - Your preferred name and where you are currently based
+ - A skill or area of expertise that you feel you are bringing to the table
+ - Something you are worried about regarding the codefest
+ - Something non-work-related that brings you joy
 
-- Introduction to ESIIL and the event
-- Working in diverse groups and what makes good teams
-- Data sovereignty and responsible use
-- Fundamentals of open science
+Brainstorm and discuss:
+ - What is a topic that you, as a team, are excited to investigate for two days related to forest carbon in the Southern Rocky mountains?
+   - What datasets are you excited to potentially use?
 
-<a href="https://www.youtube.com/watch?v=aM0FF6ph2FA">
-    <img src="https://img.youtube.com/vi/aM0FF6ph2FA/0.jpg" style="width: 50%;">
-</a>
-
-## Virtual meeting #2
-
-This training focused on the use of markdown, github, and cyverse for cloud-based collaboration and documentation of codefest projects.
-
-[The spreadsheet to record your github username is here](https://docs.google.com/spreadsheets/d/19zawYwpcHoXfNkH_OBOjkN4yeA6ih9_ZSFCQzDZVW5U/edit?usp=sharing). Note that it may take a few days to get your username added to the github team required to push and pull from the team repos.
-
-<a href="https://www.youtube.com/watch?v=49IDCh4uXeE">
-    <img src="https://img.youtube.com/vi/49IDCh4uXeE/0.jpg" style="width: 50%;">
-</a>
-
-## Virtual meeting #3
-
-Coming soon!
+*(Tuesday morning you will have ~2.5 hours to continue brainstorming, with a draft question ready by noon! So don't stress, this is just a first opportunity to get a sense of what your team is generally excited about.)*
