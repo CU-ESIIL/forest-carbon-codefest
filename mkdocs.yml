@@ -13,7 +13,9 @@ copyright: 'Copyright &copy; 2024 University of Colorado Boulder'
 # Page tree
 nav:
   - Home: index.md
+  - Codefest Teams: teams.md
   - Pre-event virtual meetings: virtual-meetings.md
+  - Breakout prompts: breakout.md
   - Collaborating on the cloud:
        - Markdown basics: collaborating-on-the-cloud/markdown_basics.md
        - Cyverse basics: collaborating-on-the-cloud/cyverse-instructions.md
