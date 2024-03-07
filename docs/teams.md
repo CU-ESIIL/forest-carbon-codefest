@@ -1,8 +1,8 @@
 # Links to team websites
 
 ## [Group 1](https://cu-esiil.github.io/FCC24_Group_1/)
-## [Group 2](https://cu-esiil.github.io/FCC_Group_2)
-## [Group 3](https://cu-esiil.github.io/FCC_Group_3/)
+## [Group 2](https://cu-esiil.github.io/FCC24_Group_2/)
+## [Group 3](https://cu-esiil.github.io/FCC24_Group_3/)
 ## [Group 4](https://cu-esiil.github.io/FCC24_Group_4/)
 ## [Group 5](https://cu-esiil.github.io/FCC24_Group_5/)
 ## [Group 6](https://cu-esiil.github.io/FCC24_Group_6/)
