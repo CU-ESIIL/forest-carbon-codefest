@@ -1,6 +1,6 @@
 # Breakout prompts
 
-For ease of access to breakout group prompts throughout the codefest
+For ease of access to breakout group prompts throughout the codefest.
 
 ## Breakout #1: Virtual meeting #3
 
