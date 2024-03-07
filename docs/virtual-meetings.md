@@ -27,4 +27,8 @@ This training focused on the use of markdown, github, and cyverse for cloud-base
 
 ## Virtual meeting #3
 
-Coming soon!
+This orientation is focused on getting your mind working on what might be possible for your team to accomplish during the Forest Carbon Codefest. We discuss access to data that you have available, multiple different perspectives on forest carbon, and how you may want to pull it all together.
+
+<a href="https://www.youtube.com/watch?v=TNCPFdaQy14">
+    <img src="https://img.youtube.com/vi/TNCPFdaQy14/0.jpg" style="width: 50%;">
+</a>
