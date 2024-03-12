@@ -16,7 +16,6 @@ require(gdalcubes)
 require(rstac)
 
 
-
 #Access ecoregiosn via VSI
 epa_l3 <- glue::glue(
   "/vsizip/vsicurl/", #magic remote connection
@@ -44,6 +43,9 @@ bboxSRproj <- sf::st_bbox(southernRockies)
 ## Search the STAC catalog
 
 To get information about a STAC archive, you can use rstac::get_request(). You can also use gdalcubes::collection_formats() to see various collection formats that you may encounter.
+
+To search a STAC catalog online, [stacindex.org](stacindex.org) is a useful tool. For example, [here is the page](https://stacindex.org/catalogs/earth-search#/) for the Earth Search catalog by Element84 that we will use.
+
 ```
 stac("https://earth-search.aws.element84.com/v1") |>
   get_request()
