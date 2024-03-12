@@ -38,6 +38,7 @@ nav:
        - GEDI: data-library/gedi.md
        - TreeMap: data-library/treemap.md
        - Disturbance stack: data-library/disturbance-stack.md
+       - Landfire Events: data-library/landfire-events.md
        - Fire Severity (CBI): data-library/fire-cbi.md
        - LCMAP (Land cover): data-library/lcmap.md
        - MODIS Vegetation Continuous Fields (VCF): data-library/modis-vcf.md
