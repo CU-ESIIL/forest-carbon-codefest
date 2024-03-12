@@ -33,6 +33,7 @@ The Raw and Model Ready Events Data Dictionary is available [here](https://landf
 Note that this is a large geodatabase (> 1 million polygons). Recommend filtering as soon as possible.
 
 The relevant layers within the .gdb file are:
+
   - CONUS_230_PublicExotics
   - CONUS_230_PublicModelReadyEvents
   - CONUS_230_PublicRawEvents
