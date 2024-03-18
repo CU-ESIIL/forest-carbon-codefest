@@ -1,0 +1,1909 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="FCC 2024">
+      
+      
+        <meta name="author" content="Tyler McIntosh">
+      
+      
+        <link rel="canonical" href="https://cu-esiil.github.io/forest-carbon-codefest/data-library/stac_mount_save/">
+      
+      <link rel="icon" href="../../assets/esiil_content/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>TUTORIAL STAC & VSI - Forest Carbon Codefest ESIIL</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-art-of-making-a-data-cube" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Forest Carbon Codefest ESIIL" class="md-header__button md-logo" aria-label="Forest Carbon Codefest ESIIL" data-md-component="logo">
+      
+  <img src="../../assets/esiil_content/ESIIL_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Forest Carbon Codefest ESIIL
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TUTORIAL STAC & VSI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: white)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CU-ESIIL/forest-carbon-codefest" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    forest-carbon-codefest
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Forest Carbon Codefest ESIIL" class="md-nav__button md-logo" aria-label="Forest Carbon Codefest ESIIL" data-md-component="logo">
+      
+  <img src="../../assets/esiil_content/ESIIL_logo.png" alt="logo">
+
+    </a>
+    Forest Carbon Codefest ESIIL
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CU-ESIIL/forest-carbon-codefest" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    forest-carbon-codefest
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teams/" class="md-nav__link">
+        Codefest Teams
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../virtual-meetings/" class="md-nav__link">
+        Pre-event virtual meetings
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../breakout/" class="md-nav__link">
+        Breakout prompts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../final-presentations/" class="md-nav__link">
+        Final presentations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Collaborating on the cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Collaborating on the cloud" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Collaborating on the cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collaborating-on-the-cloud/markdown_basics/" class="md-nav__link">
+        Markdown basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collaborating-on-the-cloud/cyverse-instructions/" class="md-nav__link">
+        Cyverse basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collaborating-on-the-cloud/github-basics/" class="md-nav__link">
+        Github basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collaborating-on-the-cloud/cyverse_data_management/" class="md-nav__link">
+        Cyverse data management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Additional resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Additional resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Additional resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/code-of-conduct/" class="md-nav__link">
+        Code of Conduct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/participant_agreement/" class="md-nav__link">
+        Participant agreement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/bilingualism_md/" class="md-nav__link">
+        R and Python bilingualism
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/cyverse_hacks/" class="md-nav__link">
+        Cyverse hacks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/useful_links/" class="md-nav__link">
+        Useful links
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Codefest data library
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Codefest data library" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Codefest data library
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../move-data-to-instance/" class="md-nav__link">
+        TUTORIAL Moving data to your instance from the data store
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mounting-via-vsi/" class="md-nav__link">
+        TUTORIAL Mounting data directly from a URL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stac_simple/" class="md-nav__link">
+        TUTORIAL Accessing data via STAC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TUTORIAL STAC & VSI
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pull_Sentinal2_l2_data/" class="md-nav__link">
+        TUTORIAL Sentinal 2 STAC example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../epa-ecoregions/" class="md-nav__link">
+        EPA Ecoregions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fia/" class="md-nav__link">
+        Forest Inventory Analysis Database
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gedi/" class="md-nav__link">
+        GEDI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../treemap/" class="md-nav__link">
+        TreeMap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disturbance-stack/" class="md-nav__link">
+        Disturbance stack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../landfire-events/" class="md-nav__link">
+        Landfire Events
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fire-cbi/" class="md-nav__link">
+        Fire Severity (CBI)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lcmap/" class="md-nav__link">
+        LCMAP (Land cover)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modis-vcf/" class="md-nav__link">
+        MODIS Vegetation Continuous Fields (VCF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drought/" class="md-nav__link">
+        Drought indices (SPEI & PDSI)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esiil-data-library/" class="md-nav__link">
+        Additional ESIIL Data Libraries
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Project documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Project documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project-documentation/project-notes/" class="md-nav__link">
+        Discussion notes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project-documentation/methods/" class="md-nav__link">
+        Methods
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project-documentation/project-presentation/" class="md-nav__link">
+        Project presentation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Publication
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Publication" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Publication
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/manuscript/" class="md-nav__link">
+        Manuscript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/notes_from_readings/" class="md-nav__link">
+        Notes from readings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/citations/" class="md-nav__link">
+        Citations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/CU-ESIIL/forest-carbon-codefest/edit/main/docs/data-library/stac_mount_save.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="the-art-of-making-a-data-cube">The art of making a data cube</h1>
+<p>Ty Tuff, ESIIL Data Scientist
+2023-10-27</p>
+<pre><code class="language-r">
+#library(Rcpp)
+library(sf)
+library(gdalcubes)
+library(rstac)
+library(gdalUtils)
+library(terra)
+library(rgdal)
+library(reshape2)
+library(osmdata)
+library(terra)
+library(dplyr)
+library(stars)
+library(ggplot2)
+library(colorspace)
+library(geos)
+library(osmdata)
+library(ggthemes)
+library(tidyr)
+gdalcubes_options(parallel = 8)
+
+sf::sf_extSoftVersion()
+##           GEOS           GDAL         proj.4 GDAL_with_GEOS     USE_PROJ_H 
+##       &quot;3.11.0&quot;        &quot;3.5.3&quot;        &quot;9.1.0&quot;         &quot;true&quot;         &quot;true&quot; 
+##           PROJ 
+##        &quot;9.1.0&quot;
+gdalcubes_gdal_has_geos()
+## [1] TRUE
+
+library(osmdata)
+library(dplyr)
+library(sf)
+library(terra)
+library(tidyterra)
+library(glue)
+library(ggplot2)
+library(ggthemes)
+library(stars)
+library(magrittr)
+library(landsat)
+</code></pre>
+<h1 id="the-philosophy-of-moving-data-in-the-cloud">The philosophy of moving data in the cloud</h1>
+<p>The philosophy of moving data in the cloud represents a paradigm shift
+in how we approach data within our analytical processes. Instead of the
+traditional method of transferring entire datasets to our local
+environments, the cloud encourages a more efficient model: bring your
+analysis to the data. This approach minimizes data movement and
+leverages the cloud’s computational power and scalability. By utilizing
+cloud-native tools and services, we can run our analyses directly on the
+data where it resides, selectively accessing and processing only what is
+necessary. This not only streamlines workflows but also significantly
+reduces overheads related to data transfer and storage management. In
+essence, the focus is on diverting computational resources to the data
+rather than the cumbersome and resource-intensive practice of moving
+large datasets to and fro.</p>
+<h2 id="to-make-or-to-take-a-photo">‘To Make’ or ‘To Take’ a photo</h2>
+<p>The distinction between making and taking a photograph lies in the
+approach and intent behind the camera. Taking a photo is often a
+reactive process, where the photographer captures moments as they
+naturally unfold, seizing the spontaneity of life without alteration.
+It’s a passive form of photography where the emphasis is on the right
+timing and the natural interplay of elements within the frame. On the
+other hand, making a photo is a proactive and deliberate act. It is akin
+to craftsmanship, where a professional photographer starts with a
+concept and utilizes a variety of tools and techniques to stage and
+construct the desired scene. They actively manipulate lighting,
+composition, and subjects to create a photograph that aligns with their
+pre-visualized artistic vision. While both methods use a camera to
+produce a photograph, making a photo involves a creation process,
+whereas taking a photo is about finding the scene.</p>
+<p>David Yarrow is a famous photographer who ‘makes’ his photographs.
+<img alt="" src="../assets/esiil_content/stac_mount_save/David-Yarrow-sorrel-sky-gallery-Photographic-Print-Cindys-Shotgun-Wedding.png" />
+<img alt="" src="../assets/esiil_content/stac_mount_save/bison.png" /></p>
+<h2 id="what-does-it-mean-to-make-a-data-cube">What does it mean to ‘make’ a data cube?</h2>
+<p>The artistry of Ansel Adams’ photography serves as a compelling analogy
+for the meticulous craft of building a data cube from cloud data sources
+using tools like STAC and GDAL VSI. Just as Adams would survey the
+vastness of a landscape, discerning the interplay of light and shadow
+upon the mountains before him, a data architect surveys the expanse of
+available data. In this analogy, the raw data are the majestic mountains
+and sweeping landscapes waiting to be captured. The STAC collection acts
+as the photographer’s deliberate choice of scene, pointing the camera
+lens—our data tools—towards the most telling and coherent dataset.</p>
+<p><img alt="" src="../../assets/stac_mount_save/Ansel_Adams_datacube.png" /> Just as Adams’
+photographs are more than mere records of a landscape, but rather a
+confluence of his vision, technique, and the scene’s natural beauty, so
+too is the data cube more than the sum of its parts. It is the artful
+synthesis of information, crafted and composed with the skill and intent
+of an artist, producing not just a tool for analysis but a harmonized,
+data-driven portrait of the world it represents. The builder of the data
+cube is, indeed, an artist, and the data cube their masterpiece,
+revealing not just data, but a story, a perspective, a landscape sewn
+from the raw material of cloud-sourced information.</p>
+<p>As Adams would adjust his viewfinder, setting the boundaries of his
+photographic frame, the data builder sets the view window, filtering and
+transferring relevant data to their own medium, akin to Adams’ film.
+This is where the raw data is transformed, organized into the structured
+form of a data frame or data cube, a process not unlike the careful
+development of a photograph in a darkroom. Here, the data cube creator,
+much like Adams with his careful dodging and burning, harmonizes
+disparate elements into a cohesive whole, each decision reflecting an
+intention and vision for the final product.</p>
+<h2 id="1-the-rat-through-the-snake-problem-scalability-with-cloud-computing">1) The Rat through the Snake Problem: Scalability with Cloud Computing</h2>
+<p>Just like a snake that swallows a rat, traditional computing systems
+often struggle to process the large volumes of environmental data —
+they’re constrained by their static hardware limitations. Cloud
+computing introduces a python-esque capability: massive scalability. By
+migrating to the cloud, we essentially make the snake bigger, allowing
+it to handle larger “prey.” Scalable computers in the cloud can grow
+with the demand, providing the necessary computational power to process
+extensive datasets, which is vital in a field where data volumes are
+increasing exponentially.</p>
+<p><img alt="Raster through a snake" src="../assets/esiil_content/stac_mount_save/mouseinsnake.png" /></p>
+<h2 id="2-the-antelope-through-the-python-problem-streamlining-with-gdal-vsi">2) The Antelope through the Python Problem: Streamlining with GDAL VSI</h2>
+<p>As we scale up, we encounter a new challenge: trying to pass an antelope
+through a python — a metaphor for the next level of complexity in data
+processing. The sheer size and complexity of the data can become
+overwhelming. This is where GDAL’s Virtual File System (VSI) becomes our
+ecological adaptation. VSI allows us to access remote data transparently
+and more efficiently. Instead of ingesting the entire “antelope,” VSI
+enables the “python” to dynamically access and process only the parts of
+the data it needs, when it needs them, much like constriction before
+digestion. This selective access minimizes the need for local storage
+and expedites the data handling process.</p>
+<p><img alt="Antelope through a Python" src="../assets/esiil_content/stac_mount_save/antelopeinpython.png" /></p>
+<h2 id="3-drinking-from-a-fire-hose-accelerated-inference-with-ai-and-ml">3) Drinking from a Fire Hose: Accelerated Inference with AI and ML</h2>
+<p>Once we’ve enabled the flow of large amounts of digestible data, we
+encounter the metaphorical challenge of drinking from a fire hose. The
+data, now flowing and accessible, is immense and rapid — posing a
+challenge not just to store and process, but to understand and derive
+meaning from in real-time. This is where artificial intelligence (AI)
+and machine learning (ML) step in. These technologies act as a
+sophisticated filtration system, enabling us to drink safely and
+beneficially from the torrent. AI and ML can analyze patterns, make
+predictions, and infer insights at a pace that keeps up with the fast
+stream of data, turning raw information into actionable knowledge.</p>
+<p><img alt="Inference through a firehose" src="../assets/esiil_content/stac_mount_save/drink-firehose.png" /></p>
+<p>By addressing these three pivotal challenges with cloud computing, GDAL
+VSI, and AI/ML, we not only manage to consume the data effectively but
+also transform our capabilities in environmental data science. We can
+move from mere data ingestion to meaningful data interpretation, all at
+a scale and speed necessary for impactful environmental analysis.</p>
+<h3 id="mounting-data">Mounting data</h3>
+<p>A void-filled Digital Elevation Model (DEM) is a comprehensive
+topographical representation where any missing data points, known as
+voids, have been filled in. These voids can occur due to various
+reasons, such as clouds or technical errors during data collection. In a
+void-filled DEM, these gaps are interpolated or estimated using the
+surrounding data to create a continuous, seamless surface model. This
+process enhances the utility and accuracy of the DEM for hydrological
+modeling, terrain analysis, and other geographical applications. The
+HydroSHEDS website
+(https://www.hydrosheds.org/hydrosheds-core-downloads) provides access
+to high-quality, void-filled DEM datasets like the
+DEM_continuous_CONUS_15s, which users can download and easily integrate
+into spatial analysis workflows using tools such as ‘terra’ in R,
+allowing for sophisticated environmental and geographical research and
+planning.</p>
+<pre><code class="language-r"># Record start time
+a &lt;- Sys.time()  
+
+# Create a string with the file path using glue, then download and read the DEM file as a raster object
+
+DEM_continuous_CONUS_15s &lt;- glue(
+  &quot;/vsizip/vsicurl/&quot;, #magic remote connection 
+  &quot;https://data.hydrosheds.org/file/hydrosheds-v1-dem/hyd_na_dem_15s.zip&quot;, #copied link to download location
+  &quot;/hyd_na_dem_15s.tif&quot;) %&gt;% #path inside zip file
+  terra::rast()  
+
+# The 'glue' function constructs the file path string, which is then passed to 'terra::rast()' to read the DEM file into R as a raster layer. '/vsizip/vsicurl/' is a special GDAL virtual file system syntax that allows reading directly from a zipped file on a remote server.
+
+# Record end time and calculate the time difference
+b &lt;- Sys.time()  
+difftime(b, a) 
+## Time difference of 4.603666 secs
+
+# The resulting raster object is stored in 'DEM_continuous_CONUS_15s', which now contains the void-filled DEM data ready for use
+
+DEM_continuous_CONUS_15s  # Prints out the details of the 'DEM_continuous_CONUS_15s' raster object
+## class       : SpatRaster 
+## dimensions  : 13920, 20640, 1  (nrow, ncol, nlyr)
+## resolution  : 0.004166667, 0.004166667  (x, y)
+## extent      : -138, -52, 5, 63  (xmin, xmax, ymin, ymax)
+## coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+## source      : hyd_na_dem_15s.tif 
+## name        : Band_1
+
+# output is a SpatRaster, which is the object type associated with the 'terra' package. 
+</code></pre>
+<p>Continuous DEM for North America</p>
+<pre><code class="language-r"># Record start time
+a &lt;- Sys.time()
+
+ggplot() +
+  geom_spatraster(data=DEM_continuous_CONUS_15s) +
+  theme_tufte()
+</code></pre>
+<p><img alt="" src="stac_mount_save_files/figure-gfm/DEM_plot-1.png" /></p>
+<pre><code class="language-r">
+b &lt;- Sys.time()
+difftime(b, a)
+## Time difference of 52.49061 secs
+</code></pre>
+<p>Calculate Slope from that DEM</p>
+<pre><code class="language-r">SLOPE_continuous_CONUS_15s &lt;-  terra::terrain(DEM_continuous_CONUS_15s, &quot;slope&quot;) 
+
+SLOPE_continuous_CONUS_15s
+## class       : SpatRaster 
+## dimensions  : 13920, 20640, 1  (nrow, ncol, nlyr)
+## resolution  : 0.004166667, 0.004166667  (x, y)
+## extent      : -138, -52, 5, 63  (xmin, xmax, ymin, ymax)
+## coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+## source(s)   : memory
+## name        :    slope 
+## min value   :  0.00000 
+## max value   : 56.98691
+</code></pre>
+<pre><code class="language-r"># Record start time
+a &lt;- Sys.time()
+
+ggplot() +
+  geom_spatraster(data=SLOPE_continuous_CONUS_15s) +
+  theme_tufte()
+</code></pre>
+<p><img alt="" src="stac_mount_save_files/figure-gfm/SLOPE_plot-1.png" /></p>
+<pre><code class="language-r">
+b &lt;- Sys.time()
+difftime(b, a)
+## Time difference of 3.859545 secs
+</code></pre>
+<p>Calculate aspect from DEM</p>
+<pre><code class="language-r">ASPECT_continuous_CONUS_15s &lt;-  terra::terrain(DEM_continuous_CONUS_15s, &quot;aspect&quot;) 
+ASPECT_continuous_CONUS_15s
+## class       : SpatRaster 
+## dimensions  : 13920, 20640, 1  (nrow, ncol, nlyr)
+## resolution  : 0.004166667, 0.004166667  (x, y)
+## extent      : -138, -52, 5, 63  (xmin, xmax, ymin, ymax)
+## coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+## source(s)   : memory
+## name        : aspect 
+## min value   :      0 
+## max value   :    360
+</code></pre>
+<pre><code class="language-r"># Record start time
+a &lt;- Sys.time()
+
+ggplot() +
+  geom_spatraster(data=ASPECT_continuous_CONUS_15s) +
+  theme_tufte()
+</code></pre>
+<p><img alt="" src="stac_mount_save_files/figure-gfm/ASPECT_plot-1.png" /></p>
+<pre><code class="language-r">
+b &lt;- Sys.time()
+difftime(b, a)
+## Time difference of 3.650267 secs
+</code></pre>
+<p>Create a cube from those layers!</p>
+<pre><code class="language-r">mini_stack &lt;- c(DEM_continuous_CONUS_15s, SLOPE_continuous_CONUS_15s,ASPECT_continuous_CONUS_15s)
+mini_stack
+## class       : SpatRaster 
+## dimensions  : 13920, 20640, 3  (nrow, ncol, nlyr)
+## resolution  : 0.004166667, 0.004166667  (x, y)
+## extent      : -138, -52, 5, 63  (xmin, xmax, ymin, ymax)
+## coord. ref. : lon/lat WGS 84 (EPSG:4326) 
+## sources     : hyd_na_dem_15s.tif  
+##               memory  
+##               memory  
+## names       : Band_1,    slope, aspect 
+## min values  :     ? ,  0.00000,      0 
+## max values  :     ? , 56.98691,    360
+</code></pre>
+<p>Reproject and return the bounding box coordinates for our Area of
+Interest</p>
+<pre><code class="language-r"># Transform the filtered geometry to EPSG:4326 and store its bounding box
+# Record start time
+a &lt;- Sys.time()
+
+DEM_continuous_CONUS_15s |&gt;
+stars::st_as_stars() |&gt; 
+  st_transform(&quot;EPSG:4326&quot;) |&gt;
+  st_bbox() -&gt; bbox_4326
+
+
+DEM_continuous_CONUS_15s |&gt;
+stars::st_as_stars() |&gt; 
+  st_transform(&quot;EPSG:32618&quot;) |&gt;
+  st_bbox() -&gt; bbox_32618
+
+b &lt;- Sys.time()
+difftime(b, a)
+## Time difference of 3.7653 mins
+</code></pre>
+<p>Get a polygon for Boulder County, reproject, and return bounding box.
+This is so I can make a smaller search in the stac catalog.</p>
+<pre><code class="language-r">boulder_county &lt;- getbb(&quot;boulder, co&quot;, format_out=&quot;sf_polygon&quot;)
+
+boulder_county$multipolygon |&gt; 
+  st_transform(crs =4326 ) |&gt;
+  st_bbox() -&gt; bbox_4326_boulder
+
+boulder_county$multipolygon |&gt; 
+  st_transform(crs =32720 ) |&gt;
+  st_bbox() -&gt; bbox_32720_boulder
+</code></pre>
+<p>Get a polygon for the United States and crop it to be the same size as
+the DEM above.</p>
+<pre><code class="language-r">aoi &lt;- getbb(&quot;United States&quot;, format_out=&quot;sf_polygon&quot;)
+
+conus &lt;- aoi$multipolygon |&gt;
+  st_crop(bbox_4326)
+
+
+ggplot(data=conus) +
+  geom_sf()
+</code></pre>
+<p><img alt="" src="stac_mount_save_files/figure-gfm/conus_bounding_box-1.png" /></p>
+<p>Search the Stac catalog.</p>
+<p>STAC, or SpatioTemporal Asset Catalog, is an open-source specification
+designed to standardize the way geospatial data is indexed and
+discovered. Developed by Element 84 among others, it facilitates better
+interoperability and sharing of geospatial assets by providing a common
+language for describing them. STAC’s flexible design allows for easy
+cataloging of data, making it simpler for individuals and systems to
+search and retrieve geospatial information. By effectively organizing
+data about the Earth’s spatial and temporal characteristics, STAC
+enables users to harness the full power of the cloud and modern data
+processing technologies, optimizing the way we access and analyze
+environmental data on a global scale.</p>
+<pre><code class="language-r"> stac(&quot;https://earth-search.aws.element84.com/v1&quot;) |&gt;
+       get_request()
+## ###STACCatalog
+## - id: earth-search-aws
+## - description: A STAC API of public datasets on AWS
+## - field(s): stac_version, type, id, title, description, links, conformsTo
+</code></pre>
+<p>Element 84’s Earth Search is a STAC compliant search and discovery API
+that offers users access to a vast collection of geospatial open
+datasets hosted on AWS. It serves as a centralized search catalog
+providing standardized metadata for these open datasets, designed to be
+freely used and integrated into various applications. Alongside the API,
+Element 84 also provides a web application named Earth Search Console,
+which is map-centric and allows users to explore and visualize the data
+contained within the Earth Search API’s catalog. This suite of tools is
+part of Element 84’s initiative to make geospatial data more accessible
+and actionable for a wide range of users and applications.</p>
+<pre><code class="language-r">collection_formats()
+##    CHIRPS_v2_0_daily_p05_tif | Image collection format for CHIRPS v 2.0 daily
+##                              | global precipitation dataset (0.05 degrees
+##                              | resolution) from GeoTIFFs, expects list of .tif
+##                              | or .tif.gz files as input. [TAGS: CHIRPS,
+##                              | precipitation]
+##  CHIRPS_v2_0_monthly_p05_tif | Image collection format for CHIRPS v 2.0 monthly
+##                              | global precipitation dataset (0.05 degrees
+##                              | resolution) from GeoTIFFs, expects list of .tif
+##                              | or .tif.gz files as input. [TAGS: CHIRPS,
+##                              | precipitation]
+##            ESA_CCI_SM_ACTIVE | Collection format for ESA CCI soil moisture
+##                              | active product (version 4.7) [TAGS: Soil
+##                              | Moisture, ESA, CCI]
+##           ESA_CCI_SM_PASSIVE | Collection format for ESA CCI soil moisture
+##                              | passive product (version 4.7) [TAGS: Soil
+##                              | Moisture, ESA, CCI]
+##    GPM_IMERG_3B_DAY_GIS_V06A | Collection format for daily
+##                              | IMERG_3B_DAY_GIS_V06A data [TAGS: Precipitation,
+##                              | GPM, IMERG]
+##                      L8_L1TP | Collection format for Landsat 8 Level 1 TP
+##                              | product [TAGS: Landsat, USGS, Level 1, NASA]
+##                        L8_SR | Collection format for Landsat 8 surface
+##                              | reflectance product [TAGS: Landsat, USGS, Level
+##                              | 2, NASA, surface reflectance]
+##                        MAXAR | Preliminary collection format for MAXAR open
+##                              | data, visual only (under development) [TAGS: ]
+##                      MxD09GA | Collection format for selected bands from the
+##                              | MODIS MxD09GA (Aqua and Terra) product [TAGS:
+##                              | MODIS, surface reflectance]
+##                      MxD10A2 | Collection format for selected bands from the
+##                              | MODIS MxD10A2 (Aqua and Terra) v006 Snow Cover
+##                              | product [TAGS: MODIS, Snow Cover]
+##                      MxD11A1 | Collection format for selected bands from the
+##                              | MODIS MxD11A2 (Aqua and Terra) v006 Land Surface
+##                              | Temperature product [TAGS: MODIS, LST]
+##                      MxD11A2 | Collection format for selected bands from the
+##                              | MODIS MxD11A2 (Aqua and Terra) v006 Land Surface
+##                              | Temperature product [TAGS: MODIS, LST]
+##                      MxD13A2 | Collection format for selected bands from the
+##                              | MODIS MxD13A2 (Aqua and Terra) product [TAGS:
+##                              | MODIS, VI, NDVI, EVI]
+##                      MxD13A3 | Collection format for selected bands from the
+##                              | MODIS MxD13A3 (Aqua and Terra) product [TAGS:
+##                              | MODIS, VI, NDVI, EVI]
+##                      MxD13Q1 | Collection format for selected bands from the
+##                              | MODIS MxD13Q1 (Aqua and Terra) product [TAGS:
+##                              | MODIS, VI, NDVI, EVI]
+##                      MxD14A2 | Collection format for the MODIS MxD14A2 (Aqua
+##                              | and Terra) product [TAGS: MODIS, Fire]
+## PlanetScope_3B_AnalyticMS_SR | Image collection format for PlanetScope 4-band
+##                              | scenes [TAGS: PlanetScope, BOA, Surface
+##                              | Reflectance]
+##                Sentinel2_L1C | Image collection format for Sentinel 2 Level 1C
+##                              | data as downloaded from the Copernicus Open
+##                              | Access Hub, expects a list of file paths as
+##                              | input. The format works on original ZIP
+##                              | compressed as well as uncompressed imagery.
+##                              | [TAGS: Sentinel, Copernicus, ESA, TOA]
+##            Sentinel2_L1C_AWS | Image collection format for Sentinel 2 Level 1C
+##                              | data in AWS [TAGS: Sentinel, Copernicus, ESA,
+##                              | TOA]
+##                Sentinel2_L2A | Image collection format for Sentinel 2 Level 2A
+##                              | data as downloaded from the Copernicus Open
+##                              | Access Hub, expects a list of file paths as
+##                              | input. The format should work on original ZIP
+##                              | compressed as well as uncompressed imagery.
+##                              | [TAGS: Sentinel, Copernicus, ESA, BOA, Surface
+##                              | Reflectance]
+##          Sentinel2_L2A_THEIA | Image collection format for Sentinel 2 Level 2A
+##                              | data as downloaded from Theia. [TAGS: Sentinel,
+##                              | ESA, Flat Reflectance, Theia]
+</code></pre>
+<p>Building a stac collection by aiming your camera at the landscape</p>
+<p>Creating a STAC collection is akin to a photographer framing a shot; the
+landscape is rich with diverse data, mirroring a scene bustling with
+potential subjects, colors, and light. Just as a photographer selects a
+portion of the vista to capture, focusing on elements that will compose
+a compelling image, a data scientist must similarly navigate the vast
+data terrain. They must ‘point their camera’ judiciously, ensuring that
+the ‘frame’ encapsulates the precise data needed. This careful selection
+is crucial, as it determines the relevance and quality of the data
+collection, much like the photographer’s choice dictates the story a
+photograph will tell.</p>
+<p><img alt="" src="../assets/esiil_content/stac_mount_save/Ansel_adams_Jackson_hole.png" /></p>
+<pre><code class="language-r"># Record start time
+a &lt;- Sys.time()
+
+# Initialize STAC connection
+s = stac(&quot;https://earth-search.aws.element84.com/v0&quot;)
+
+
+# Search for Sentinel-2 images within specified bounding box and date range
+#22 Million items
+items = s |&gt;
+    stac_search(collections = &quot;sentinel-s2-l2a-cogs&quot;,
+                bbox = c(bbox_4326_boulder[&quot;xmin&quot;], 
+                         bbox_4326_boulder[&quot;ymin&quot;],
+                         bbox_4326_boulder[&quot;xmax&quot;], 
+                         bbox_4326_boulder[&quot;ymax&quot;]), 
+                datetime = &quot;2021-05-15/2021-05-16&quot;) |&gt;
+    post_request() |&gt;
+    items_fetch(progress = FALSE)
+
+# Print number of found items
+length(items$features)
+## [1] 1
+
+# Prepare the assets for analysis
+library(gdalcubes)
+assets = c(&quot;B01&quot;, &quot;B02&quot;, &quot;B03&quot;, &quot;B04&quot;, &quot;B05&quot;, &quot;B06&quot;, 
+           &quot;B07&quot;, 
+           &quot;B08&quot;, &quot;B8A&quot;, &quot;B09&quot;, &quot;B11&quot;, &quot;B12&quot;, &quot;SCL&quot;)
+s2_collection = stac_image_collection(items$features, asset_names = assets,
+property_filter = function(x) {x[[&quot;eo:cloud_cover&quot;]] &lt; 20}) #all images with less than 20% clouds
+
+b &lt;- Sys.time()
+difftime(b, a)
+## Time difference of 0.4706092 secs
+
+# Display the image collection
+s2_collection
+## Image collection object, referencing 1 images with 13 bands
+## Images:
+##                       name      left      top   bottom     right
+## 1 S2B_13TDE_20210516_0_L2A -106.1832 40.65079 39.65576 -104.8846
+##              datetime        srs
+## 1 2021-05-16T18:02:54 EPSG:32613
+## 
+## Bands:
+##    name offset scale unit nodata image_count
+## 1   B01      0     1                       1
+## 2   B02      0     1                       1
+## 3   B03      0     1                       1
+## 4   B04      0     1                       1
+## 5   B05      0     1                       1
+## 6   B06      0     1                       1
+## 7   B07      0     1                       1
+## 8   B08      0     1                       1
+## 9   B09      0     1                       1
+## 10  B11      0     1                       1
+## 11  B12      0     1                       1
+## 12  B8A      0     1                       1
+## 13  SCL      0     1                       1
+</code></pre>
+<p>Setting up your camera and film</p>
+<p>The camera through which the data scientist frames the shot is
+multifaceted, akin to the tools and processes they employ. The camera’s
+film, analogous to the data cube, defines the resolution and dimensions
+of the captured data, shaping how the final dataset will be utilized.
+The lens and its settings—focus, aperture, and exposure—determine the
+clarity, depth, and breadth of the captured information, much like the
+algorithms and parameters set by the data scientist dictate the
+granularity and scope of the data cube. The flash, like data enhancement
+techniques, can illuminate hidden details, ensuring that the data cube,
+the final product, is as informative and accurate as the landscape it
+represents.</p>
+<p><img alt="" src="../assets/esiil_content/stac_mount_save/View_Ansel-Adams_Camera.png" /></p>
+<pre><code class="language-r"># Record start time
+a &lt;- Sys.time()
+
+# Define a specific view on the satellite image collection
+v = cube_view(
+    srs = &quot;EPSG:32720&quot;, #this is harder than expected. 
+    dx = 100, 
+    dy = 100, 
+    dt = &quot;P1M&quot;, 
+    aggregation = &quot;median&quot;, 
+    resampling = &quot;near&quot;,
+    extent = list(
+        t0 = &quot;2021-05-15&quot;, 
+        t1 = &quot;2021-05-16&quot;,
+        left = bbox_32720_boulder[1], 
+        right = bbox_32720_boulder[2],
+        top = bbox_32720_boulder[4], 
+        bottom = bbox_32720_boulder[3]
+    )
+)
+
+b &lt;- Sys.time()
+difftime(b, a)
+## Time difference of 0.002738953 secs
+
+# Display the defined view
+v
+## A data cube view object
+## 
+## Dimensions:
+##                 low             high  count pixel_size
+## t        2021-05-01       2021-05-31      1        P1M
+## y -3103099.52398788 15434400.4760121 185375        100
+## x -3178878.98542359 15369521.0145764 185484        100
+## 
+## SRS: &quot;EPSG:32720&quot;
+## Temporal aggregation method: &quot;median&quot;
+## Spatial resampling method: &quot;near&quot;
+</code></pre>
+<p>Take a picture!</p>
+<p>Raster style</p>
+<pre><code class="language-r"># Record start time
+a &lt;- Sys.time()
+
+s2_collection |&gt;
+    raster_cube(v) |&gt;
+    select_bands(c( &quot;B04&quot;, &quot;B05&quot;))  |&gt;
+  apply_pixel(c(&quot;(B05-B04)/(B05+B04)&quot;), names=&quot;NDVI&quot;) |&gt;
+  write_tif() |&gt;
+  raster::stack() -&gt; x
+x
+## class      : RasterStack 
+## dimensions : 185375, 185484, 34384096500, 1  (nrow, ncol, ncell, nlayers)
+## resolution : 100, 100  (x, y)
+## extent     : -3178879, 15369521, -3103100, 15434400  (xmin, xmax, ymin, ymax)
+## crs        : +proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs 
+## names      : NDVI
+
+b &lt;- Sys.time()
+difftime(b, a)
+## Time difference of 4.132932 mins
+</code></pre>
+<p>STARS style</p>
+<pre><code class="language-r"># Record start time
+a &lt;- Sys.time()
+
+s2_collection |&gt;
+    raster_cube(v) |&gt;
+    select_bands(c(&quot;B04&quot;,&quot;B05&quot;))  |&gt;
+  apply_pixel(c(&quot;(B05-B04)/(B05+B04)&quot;), names=&quot;NDVI&quot;) |&gt;
+  stars::st_as_stars() -&gt; y
+
+b &lt;- Sys.time()
+difftime(b, a)
+## Time difference of 1.459866 mins
+
+y
+## stars_proxy object with 1 attribute in 1 file(s):
+## $NDVI
+## [1] &quot;[...]/filec5982c38536c.nc:NDVI&quot;
+## 
+## dimension(s):
+##      from     to   offset delta                refsys point
+## x       1 185484 -3178879   100 WGS 84 / UTM zone 20S    NA
+## y       1 185375 15434400  -100 WGS 84 / UTM zone 20S    NA
+## time    1      1       NA    NA               POSIXct FALSE
+##                       values x/y
+## x                       NULL [x]
+## y                       NULL [y]
+## time [2021-05-01,2021-06-01)
+</code></pre>
+<p>Extract data</p>
+<pre><code class="language-r"># Record start time
+a &lt;- Sys.time()
+
+
+x &lt;- s2_collection |&gt;
+    raster_cube(v) |&gt;
+    select_bands(c(&quot;B01&quot;, &quot;B02&quot;, &quot;B03&quot;, &quot;B04&quot;, 
+                   &quot;B05&quot;, &quot;B06&quot;, &quot;B07&quot;, &quot;B08&quot;, 
+                   &quot;B8A&quot;, &quot;B09&quot;, &quot;B11&quot;, &quot;B12&quot;)) |&gt;
+    extract_geom(boulder_county$multipolygon) |&gt;
+    rename(
+        &quot;time&quot; = &quot;time&quot;,
+        &quot;443&quot; = &quot;B01&quot;,
+        &quot;490&quot; = &quot;B02&quot;,
+        &quot;560&quot; = &quot;B03&quot;,
+        &quot;665&quot; = &quot;B04&quot;,
+        &quot;705&quot; = &quot;B05&quot;,
+        &quot;740&quot; = &quot;B06&quot;,
+        &quot;783&quot; = &quot;B07&quot;,
+        &quot;842&quot; = &quot;B08&quot;,
+        &quot;865&quot; = &quot;B8A&quot;,
+        &quot;940&quot; = &quot;B09&quot;,
+        &quot;1610&quot; = &quot;B11&quot;,
+        &quot;2190&quot; = &quot;B12&quot;
+    )
+
+b &lt;- Sys.time()
+difftime(b, a)
+## Time difference of 1.699016 mins
+
+head(x)
+##   FID       time   443   490   560   665   705   740   783   842  865  940 1610
+## 1   1 2021-05-01 11096 10929 10224  9893  9956  9706  9715  9641 9511 8459 5682
+## 2   1 2021-05-01 11631 11282 10550 10234 10288 10031 10032  9988 9828 9153 5802
+## 3   1 2021-05-01 11900 11393 10666 10337 10398 10142 10138 10093 9927 9461 5754
+## 4   1 2021-05-01 11406 10597  9928  9626  9694  9481  9516  9338 9336 8959 5726
+## 5   1 2021-05-01 11399 10939 10237  9905  9978  9738  9746  9633 9555 8925 5831
+## 6   1 2021-05-01 11600 11174 10462 10147 10209  9952  9960  9890 9760 9153 5773
+##   2190
+## 1 3917
+## 2 3981
+## 3 3937
+## 4 4054
+## 5 4097
+## 6 3990
+</code></pre>
+<p>Make a timeseries</p>
+<pre><code class="language-r">
+# Record start time
+a &lt;- Sys.time()
+
+items &lt;- s |&gt;
+    stac_search(collections = &quot;sentinel-s2-l2a-cogs&quot;,
+                bbox = c(-105.694362,   39.912886,  -105.052774,    40.262785),
+                datetime = &quot;2020-01-01/2022-12-31&quot;,
+                limit = 500) %&gt;% 
+    post_request() 
+
+S2.mask = image_mask(&quot;SCL&quot;, values=c(3,8,9))
+
+col = stac_image_collection(items$features, asset_names = assets, 
+                            property_filter = function(x) {x[[&quot;eo:cloud_cover&quot;]] &lt; 30})
+
+v = cube_view(srs = &quot;EPSG:4326&quot;,  extent = list(t0 = &quot;2020-01-01&quot;, t1 = &quot;2022-12-31&quot;,
+              left = -105.694362, right = -105.052774,  top = 40.262785, bottom = 39.912886),
+              dx = 0.001, dy = 0.001, dt = &quot;P1M&quot;, aggregation = &quot;median&quot;, resampling = &quot;bilinear&quot;)
+
+library(colorspace)
+ndvi.col = function(n) {
+  rev(sequential_hcl(n, &quot;Green-Yellow&quot;))
+}
+library(gdalcubes)
+raster_cube(col, v, mask = S2.mask) |&gt;
+    select_bands(c(&quot;B04&quot;, &quot;B08&quot;)) |&gt;
+    apply_pixel(&quot;(B08-B04)/(B08+B04)&quot;, &quot;NDVI&quot;) |&gt;
+    gdalcubes::animate(col = ndvi.col, zlim=c(-0.2,1), key.pos = 1, save_as = &quot;anim.gif&quot;, fps = 4)
+## [1] &quot;/Users/ty/Documents/Github/hackathon2023_datacube/docs/code_for_building_cube/anim.gif&quot;
+
+b &lt;- Sys.time()
+difftime(b, a)
+## Time difference of 4.716672 mins
+
+y
+## stars_proxy object with 1 attribute in 1 file(s):
+## $NDVI
+## [1] &quot;[...]/filec5982c38536c.nc:NDVI&quot;
+## 
+## dimension(s):
+##      from     to   offset delta                refsys point
+## x       1 185484 -3178879   100 WGS 84 / UTM zone 20S    NA
+## y       1 185375 15434400  -100 WGS 84 / UTM zone 20S    NA
+## time    1      1       NA    NA               POSIXct FALSE
+##                       values x/y
+## x                       NULL [x]
+## y                       NULL [y]
+## time [2021-05-01,2021-06-01)
+</code></pre>
+<p><img alt="" src="../assets/esiil_content/stac_mount_save/anim.gif" /></p>
+<p>Saving Data Cubes to Local Storage There are occasions when we need to
+manipulate data cubes using other software. For such purposes, we can
+save data cubes to our local disk as individual netCDF files or as a
+series of GeoTIFF files. In the case of the latter, each temporal
+segment of the cube is saved as a separate (multiband) GeoTIFF file.</p>
+<p>Both netCDF and GeoTIFF formats allow for file size reduction through
+compression and data packing. This process involves transforming double
+precision numbers into smaller integer values using a scale and offset,
+which can be particularly useful for managing disk space (for more
+details, refer to the ?write_ncdf and ?write_tif documentation).</p>
+<pre><code class="language-r">gdalcubes_options(ncdf_compression_level = 1)
+write_ncdf(cube, file.path(&quot;~/Desktop&quot;, basename(tempfile(fileext = &quot;.nc&quot;))))
+gdalcubes_options(ncdf_compression_level = 0)
+</code></pre>
+<p>write_tif() and write_ncdf() both return the path(s) to created file(s)
+as a character vector.</p>
+<pre><code class="language-r">items_2020 &lt;- s |&gt;
+    stac_search(collections = &quot;sentinel-s2-l2a-cogs&quot;,
+                bbox = c(-105.694362,   39.912886,  -105.052774,    40.262785),
+                datetime = &quot;2020-05-01/2020-06-30&quot;) |&gt; 
+    post_request() 
+
+items_2021 &lt;- s |&gt;
+    stac_search(collections = &quot;sentinel-s2-l2a-cogs&quot;,
+                bbox = c(-105.694362,   39.912886,  -105.052774,    40.262785),
+                datetime = &quot;2021-05-01/2021-06-30&quot;) |&gt; 
+    post_request() 
+
+
+col_2020 = stac_image_collection(items_2020$features, asset_names = assets)
+col_2021 = stac_image_collection(items_2021$features, asset_names = assets)
+
+v_2020 = cube_view(srs = &quot;EPSG:32720&quot;,  extent = list(t0 = &quot;2020-05-01&quot;, t1 = &quot;2020-06-30&quot;,
+              left = bbox_32720_boulder[&quot;xmin&quot;], right = bbox_32720_boulder[&quot;xmax&quot;],  top = bbox_32720_boulder[&quot;ymax&quot;], bottom = bbox_32720_boulder[&quot;ymin&quot;]),
+              dx = 100, dy = 100, dt = &quot;P1D&quot;, aggregation = &quot;median&quot;, resampling = &quot;bilinear&quot;)
+
+v_2021 = cube_view(v_2020, extent = list(t0 = &quot;2021-05-01&quot;, t1 = &quot;2021-06-30&quot;))
+
+
+max_ndvi_mosaic &lt;- function(col, v) {
+    raster_cube(col, v) |&gt;
+    select_bands(c(&quot;B04&quot;, &quot;B08&quot;)) |&gt;
+    apply_pixel(c(&quot;(B08-B04)/(B08+B04)&quot;), names=&quot;NDVI&quot;) |&gt;
+    reduce_time(&quot;max(NDVI)&quot;)
+}
+
+suppressPackageStartupMessages(library(stars))
+max_ndvi_mosaic(col_2020, v_2020) -&gt; maxndvi_2020
+
+max_ndvi_mosaic(col_2021, v_2021)  -&gt; maxndvi_2021
+
+maxndvi_2021
+maxndvi_2020
+
+difference = maxndvi_2021 - maxndvi_2020
+difference[difference &gt; -0.15] = NA
+names(difference) &lt;- &quot;Difference of max NDVI (2020 - 2019)&quot;
+</code></pre>
+<pre><code class="language-r">flood_polygon_data3 &lt;- glue(&quot;/vsizip/vsicurl/https://data.hydrosheds.org/file/hydrosheds-associated/gloric/GloRiC_v10_shapefile.zip/GloRiC_v10_shapefile/GloRiC_v10.shp&quot;) |&gt;
+  st_read() |&gt;
+  st_as_sf(coords = c(&quot;lon&quot;,&quot;lat&quot;))
+
+flood_polygon_data3
+</code></pre>
+<pre><code class="language-r">#st_read(&quot;/Users/ty/Downloads/GloRiC_v10_geodatabase/GloRiC_v10.gdb&quot;)
+
+flood_polygon_data3 &lt;- glue(&quot;/vsizip/vsicurl/https://data.hydrosheds.org/file/hydrosheds-associated/gloric/GloRiC_v10_geodatabase.zip/GloRiC_v10_geodatabase/GloRiC_v10.gdb&quot;) |&gt;
+  st_read() |&gt;
+  st_as_sf(coords = c(&quot;lon&quot;,&quot;lat&quot;))
+
+flood_polygon_data3
+</code></pre>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2024-03-18
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../stac_simple/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TUTORIAL Accessing data via STAC" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              TUTORIAL Accessing data via STAC
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Pull_Sentinal2_l2_data/" class="md-footer__link md-footer__link--next" aria-label="Next: TUTORIAL Sentinal 2 STAC example" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              TUTORIAL Sentinal 2 STAC example
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 University of Colorado Boulder
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.top", "toc.integrate", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+    
+    
+  </body>
+</html>
