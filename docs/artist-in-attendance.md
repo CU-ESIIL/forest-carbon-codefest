@@ -11,6 +11,9 @@ Title: image.noise.map.data
 
 Medium: Digital media
 
+![roberto azaretto](../assets/Roberto.png)
+
+
 The pieces that constitute “image.noise.map.data” were created by extracting color palettes from landscapes of the Southern Rockies ecoregion and then using R to insert randomly ordered sequences of pixels with those color values in images containing the contour of the region. [You can view Roberto's website and more work here](https://robertoazaretto.wordpress.com/).
 
 
@@ -19,6 +22,8 @@ The pieces that constitute “image.noise.map.data” were created by extracting
 Title: Half a Gram of CO2
 
 Medium: Handmade charcoal paint pigment, paper
+
+![emma piper-burket](../assets/Emma.jpg)
 
 The watercolor paint used for “Half a Gram of CO2” was created by collecting and grinding pieces of charcoal left on the ground from the 2020 Cameron Peak Fire. Based on rough estimates of carbon content in charcoal, the pigment used on the page contains enough carbon for approximately half a gram of CO2. [You can view Emma's website and more work here](https://emmapiperburket.com/).
 
@@ -30,6 +35,13 @@ The watercolor paint used for “Half a Gram of CO2” was created by collecting
 Title: CU Boulder South
 
 Medium: Acrylic on canvas, watercolor on sketch paper
+
+![luis1](../assets/Luis1.jpg)
+![luis2](../assets/Luis2.jpg)
+![luis3](../assets/Luis3.jpg)
+![luis4](../assets/Luis4.jpg)
+
+
 
 These pieces depict a meadow at the CU Boulder South Campus. The watercolor studies created during the codefest imagine the location before, during, and after a wildfire–a major theme of the Forest Carbon Codefest. The acrylic painting combines imagery from each of these studies. [You can view Luis' website and more work here](https://www.luisxdepablo.com/).
 
