@@ -11,12 +11,12 @@ Title: image.noise.map.data
 
 Medium: Digital media
 
+The pieces that constitute “image.noise.map.data” were created by extracting color palettes from landscapes of the Southern Rockies ecoregion and then using R to insert randomly ordered sequences of pixels with those color values in images containing the contour of the region. [You can view Roberto's website and more work here](https://robertoazaretto.wordpress.com/).
+
 <p style="text-align:center;">
   <img src="../assets/Roberto.png" alt="Roberto" style="width:40%;"/>
 </p>
 
-
-The pieces that constitute “image.noise.map.data” were created by extracting color palettes from landscapes of the Southern Rockies ecoregion and then using R to insert randomly ordered sequences of pixels with those color values in images containing the contour of the region. [You can view Roberto's website and more work here](https://robertoazaretto.wordpress.com/).
 
 
 **Emma Piper-Burket**: University of Colorado, Boulder, Department of Critical Media Practices
@@ -25,13 +25,16 @@ Title: Half a Gram of CO2
 
 Medium: Handmade charcoal paint pigment, paper
 
+The watercolor paint used for “Half a Gram of CO2” was created by collecting and grinding pieces of charcoal left on the ground from the 2020 Cameron Peak Fire. Based on rough estimates of carbon content in charcoal, the pigment used on the page contains enough carbon for approximately half a gram of CO2. [You can view Emma's website and more work here](https://emmapiperburket.com/).
+
 <p style="text-align:center;">
   <img src="../assets/Emma.jpg" alt="Emma" style="width:40%;"/>
 </p>
 
-The watercolor paint used for “Half a Gram of CO2” was created by collecting and grinding pieces of charcoal left on the ground from the 2020 Cameron Peak Fire. Based on rough estimates of carbon content in charcoal, the pigment used on the page contains enough carbon for approximately half a gram of CO2. [You can view Emma's website and more work here](https://emmapiperburket.com/).
+
 
 *“Attending the Forest Carbon Codefest made me think about carbon sequestration in new ways; the idea that physical objects hold carbon made me want to more clearly visualize what a certain amount of carbon looks like.” - Emma Piper-Burket*
+
 
 
 **Luis Xavier de Pablo**: University of Colorado, Boulder, Department of Ecology and Evolutionary Biology
@@ -39,6 +42,8 @@ The watercolor paint used for “Half a Gram of CO2” was created by collecting
 Title: CU Boulder South
 
 Medium: Acrylic on canvas, watercolor on sketch paper
+
+These pieces depict a meadow at the CU Boulder South Campus. The watercolor studies created during the codefest imagine the location before, during, and after a wildfire–a major theme of the Forest Carbon Codefest. The acrylic painting combines imagery from each of these studies. [You can view Luis' website and more work here](https://www.luisxdepablo.com/).
 
 <img src="../assets/Luis1.jpg" alt="luis1" style="width:70%; display:block; margin:auto;"/>
 
@@ -49,8 +54,6 @@ Medium: Acrylic on canvas, watercolor on sketch paper
 </p>
 
 
-
-These pieces depict a meadow at the CU Boulder South Campus. The watercolor studies created during the codefest imagine the location before, during, and after a wildfire–a major theme of the Forest Carbon Codefest. The acrylic painting combines imagery from each of these studies. [You can view Luis' website and more work here](https://www.luisxdepablo.com/).
 
 ## The critical role of art-science collaborations
 
