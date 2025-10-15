@@ -36,10 +36,13 @@ Title: CU Boulder South
 
 Medium: Acrylic on canvas, watercolor on sketch paper
 
-![luis1](../assets/Luis1.jpg)
-![luis2](../assets/Luis2.jpg)
-![luis3](../assets/Luis3.jpg)
-![luis4](../assets/Luis4.jpg)
+<img src="../assets/Luis1.jpg" alt="luis1" style="width:80%; display:block; margin:auto;"/>
+
+<p style="text-align:center;">
+  <img src="../assets/Luis2.jpg" alt="luis2" style="width:25%;"/>
+  <img src="../assets/Luis3.jpg" alt="luis3" style="width:25%;"/>
+  <img src="../assets/Luis4.jpg" alt="luis4" style="width:25%;"/>
+</p>
 
 
 
