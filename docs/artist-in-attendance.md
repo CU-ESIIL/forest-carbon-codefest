@@ -11,7 +11,9 @@ Title: image.noise.map.data
 
 Medium: Digital media
 
-![roberto azaretto](../assets/Roberto.png)
+<p style="text-align:center;">
+  <img src="../assets/Roberto.png" alt="Roberto" style="width:40%;"/>
+</p>
 
 
 The pieces that constitute “image.noise.map.data” were created by extracting color palettes from landscapes of the Southern Rockies ecoregion and then using R to insert randomly ordered sequences of pixels with those color values in images containing the contour of the region. [You can view Roberto's website and more work here](https://robertoazaretto.wordpress.com/).
@@ -23,7 +25,9 @@ Title: Half a Gram of CO2
 
 Medium: Handmade charcoal paint pigment, paper
 
-![emma piper-burket](../assets/Emma.jpg)
+<p style="text-align:center;">
+  <img src="../assets/Emma.jpg" alt="Emma" style="width:40%;"/>
+</p>
 
 The watercolor paint used for “Half a Gram of CO2” was created by collecting and grinding pieces of charcoal left on the ground from the 2020 Cameron Peak Fire. Based on rough estimates of carbon content in charcoal, the pigment used on the page contains enough carbon for approximately half a gram of CO2. [You can view Emma's website and more work here](https://emmapiperburket.com/).
 
@@ -36,12 +40,12 @@ Title: CU Boulder South
 
 Medium: Acrylic on canvas, watercolor on sketch paper
 
-<img src="../assets/Luis1.jpg" alt="luis1" style="width:80%; display:block; margin:auto;"/>
+<img src="../assets/Luis1.jpg" alt="luis1" style="width:70%; display:block; margin:auto;"/>
 
 <p style="text-align:center;">
-  <img src="../assets/Luis2.jpg" alt="luis2" style="width:25%;"/>
-  <img src="../assets/Luis3.jpg" alt="luis3" style="width:25%;"/>
-  <img src="../assets/Luis4.jpg" alt="luis4" style="width:25%;"/>
+  <img src="../assets/Luis2.jpg" alt="luis2" style="width:20%;"/>
+  <img src="../assets/Luis3.jpg" alt="luis3" style="width:20%;"/>
+  <img src="../assets/Luis4.jpg" alt="luis4" style="width:20%;"/>
 </p>
 
 
