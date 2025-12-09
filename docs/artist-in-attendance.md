@@ -4,6 +4,12 @@ In collaboration with CU Boulder’s Nature, Environment, Science & Technology (
 
 The artists-in-attendance possess diverse backgrounds in various artistic mediums, from filmmaking to visual arts to musical composition, showcasing the diversity in creative expression. Each artist was encouraged to create a final piece for display in a public space, increasing exposure to the collaboration, and all pieces were produced as visual media. Below is the final artwork of these artists and the pieces' descriptions, as well as a discussion of the critical role of art-science collaborations in addressing complex environmental problems.
 
+The artwork is now shown in the ESIIL entryway; come by  to check it out!
+
+<p style="text-align:center;">
+  <img src="../assets/FCC_exhibit.pjpg" alt="Exhibit photo" style="width:60%;"/>
+</p>
+
 ## Artists-in-attendance and their work
 **Roberto Azaretto**: University of Colorado, Boulder, Department of Critical Media Practices
 
