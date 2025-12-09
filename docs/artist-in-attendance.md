@@ -7,7 +7,8 @@ The artists-in-attendance possess diverse backgrounds in various artistic medium
 The artwork is now shown in the ESIIL entryway; come by  to check it out!
 
 <p style="text-align:center;">
-  <img src="../assets/FCC_exhibit.pjpg" alt="Exhibit photo" style="width:60%;"/>
+  <img src="../assets/FCC_exhibit.jpg" alt="Exhibit photo" style="width:40%;"/>
+  <img src="../assets/FCC_exhibit2.jpg" alt="Exhibit photo 2" style="width:40%;"/>
 </p>
 
 ## Artists-in-attendance and their work
